@@ -1,0 +1,57 @@
+# Cursor Rules for Lee Homepage Project
+
+## Project Overview
+This is a static website project designed for Netlify hosting. The project uses vanilla HTML, CSS, and JavaScript.
+
+## File Structure
+- `index.html` - Main HTML file
+- `styles.css` - All styling
+- `script.js` - JavaScript functionality
+- `netlify.toml` - Netlify configuration
+
+## Coding Standards
+
+### HTML
+- Use semantic HTML5 elements
+- Always include proper meta tags (viewport, charset, description)
+- Use meaningful class and ID names
+- Follow accessibility best practices (alt tags, ARIA labels where needed)
+
+### CSS
+- Use modern CSS features (flexbox, grid, CSS variables)
+- Follow mobile-first responsive design approach
+- Use consistent spacing and typography
+- Keep styles organized and commented
+- Use CSS custom properties for theming when appropriate
+
+### JavaScript
+- Use modern ES6+ syntax
+- Keep functions small and focused
+- Add comments for complex logic
+- Handle errors gracefully
+- Ensure cross-browser compatibility
+
+## Netlify Deployment
+- The site is configured for static hosting
+- No build process required
+- All files in root directory are published
+- Redirects are configured in `netlify.toml`
+
+## Best Practices
+- Keep code clean and well-commented
+- Test on multiple browsers and devices
+- Optimize images before adding them
+- Use relative paths for internal links
+- Ensure all external links open in new tabs when appropriate
+- Follow SEO best practices
+
+## Performance
+- Minimize external dependencies
+- Optimize CSS and JavaScript
+- Use efficient selectors
+- Consider lazy loading for images if added later
+
+## Git Workflow
+- Commit messages should be clear and descriptive
+- Keep commits focused on single features/fixes
+- Don't commit build artifacts or sensitive information
