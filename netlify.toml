@@ -1,15 +1,13 @@
 # Netlify configuration file
 [build]
-  # Install dependencies for Netlify Functions
-  command = "npm install"
-  # No build command needed for static HTML
+  # Publish directory (root contains all static files)
   publish = "."
+  # Install dependencies for Netlify Functions (only if package.json exists)
+  command = "npm install || true"
 
-# Redirect rules
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+# Functions directory
+[functions]
+  directory = "netlify/functions"
 
 # Headers for security and performance
 [[headers]]
