@@ -93,9 +93,14 @@ const Cart = {
     }
 };
 
-// Update cart count on page load
+// Update cart count on page load (only if DOM is ready)
 if (typeof document !== 'undefined') {
-    document.addEventListener('DOMContentLoaded', () => {
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', () => {
+            Cart.updateCartCount();
+        });
+    } else {
+        // DOM is already ready
         Cart.updateCartCount();
-    });
+    }
 }

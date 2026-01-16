@@ -1,92 +1,134 @@
-// Mobile menu toggle
-const menuToggle = document.getElementById('menuToggle');
-const mobileMenu = document.getElementById('mobileMenu');
-const navbar = document.getElementById('navbar');
-let isMenuOpen = false;
+// Wait for DOM to be ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeAll);
+} else {
+    // DOM is already ready
+    initializeAll();
+}
 
-if (menuToggle && mobileMenu) {
-    menuToggle.addEventListener('click', () => {
-        isMenuOpen = !isMenuOpen;
-        mobileMenu.classList.toggle('hidden', !isMenuOpen);
-        
-        // Update icon
-        const icon = menuToggle.querySelector('i');
-        if (icon) {
-            icon.setAttribute('data-lucide', isMenuOpen ? 'x' : 'menu');
-            lucide.createIcons();
-        }
-    });
+function initializeAll() {
+    initializeNavigation();
+    initializeCart();
+    initializeSmoothScrolling();
+    initializeIcons();
+}
 
-    // Close mobile menu when clicking on links
-    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
-    mobileNavLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            isMenuOpen = false;
-            mobileMenu.classList.add('hidden');
+function initializeNavigation() {
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const navbar = document.getElementById('navbar');
+    let isMenuOpen = false;
+
+    if (menuToggle && mobileMenu) {
+        menuToggle.addEventListener('click', () => {
+            isMenuOpen = !isMenuOpen;
+            mobileMenu.classList.toggle('hidden', !isMenuOpen);
+            
+            // Update icon
             const icon = menuToggle.querySelector('i');
-            if (icon) {
-                icon.setAttribute('data-lucide', 'menu');
+            if (icon && typeof lucide !== 'undefined') {
+                icon.setAttribute('data-lucide', isMenuOpen ? 'x' : 'menu');
                 lucide.createIcons();
+            }
+        });
+
+        // Close mobile menu when clicking on links
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                isMenuOpen = false;
+                mobileMenu.classList.add('hidden');
+                const icon = menuToggle.querySelector('i');
+                if (icon && typeof lucide !== 'undefined') {
+                    icon.setAttribute('data-lucide', 'menu');
+                    lucide.createIcons();
+                }
+            });
+        });
+    }
+
+    // Scroll effect for navbar
+    if (navbar) {
+        let scrolled = false;
+        const handleScroll = () => {
+            const scrollY = window.scrollY;
+            const shouldBeScrolled = scrollY > 20;
+            
+            if (shouldBeScrolled !== scrolled) {
+                scrolled = shouldBeScrolled;
+                if (scrolled) {
+                    navbar.classList.remove('bg-transparent', 'py-5');
+                    navbar.classList.add('bg-slate-950/90', 'backdrop-blur-xl', 'border-b', 'border-white/10', 'py-3');
+                } else {
+                    navbar.classList.remove('bg-slate-950/90', 'backdrop-blur-xl', 'border-b', 'border-white/10', 'py-3');
+                    navbar.classList.add('bg-transparent', 'py-5');
+                }
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+    }
+}
+
+function initializeCart() {
+    // Update cart count on page load (if cart.js is loaded)
+    if (typeof Cart !== 'undefined') {
+        Cart.updateCartCount();
+    }
+}
+
+function initializeSmoothScrolling() {
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+            if (href === '#' || !href) return;
+            
+            e.preventDefault();
+            const target = document.querySelector(href);
+            if (target) {
+                const offsetTop = target.offsetTop - 80; // Account for fixed navbar
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
             }
         });
     });
 }
 
-// Scroll effect for navbar
-let scrolled = false;
-const handleScroll = () => {
-    const scrollY = window.scrollY;
-    const shouldBeScrolled = scrollY > 20;
-    
-    if (shouldBeScrolled !== scrolled) {
-        scrolled = shouldBeScrolled;
-        if (navbar) {
-            if (scrolled) {
-                navbar.classList.remove('bg-transparent', 'py-5');
-                navbar.classList.add('bg-slate-950/90', 'backdrop-blur-xl', 'border-b', 'border-white/10', 'py-3');
-            } else {
-                navbar.classList.remove('bg-slate-950/90', 'backdrop-blur-xl', 'border-b', 'border-white/10', 'py-3');
-                navbar.classList.add('bg-transparent', 'py-5');
-            }
-        }
+function initializeIcons() {
+    // Initial icon creation
+    if (typeof lucide !== 'undefined' && lucide.createIcons) {
+        lucide.createIcons();
     }
-};
-
-window.addEventListener('scroll', handleScroll);
-
-// Smooth scrolling for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        const href = this.getAttribute('href');
-        if (href === '#') return;
-        
-        e.preventDefault();
-        const target = document.querySelector(href);
-        if (target) {
-            const offsetTop = target.offsetTop - 80; // Account for fixed navbar
-            window.scrollTo({
-                top: offsetTop,
-                behavior: 'smooth'
-            });
-        }
-    });
-});
+}
 
 // Re-initialize icons on dynamic content (if any)
-const observer = new MutationObserver(() => {
-    lucide.createIcons();
-});
+// Use debounce to prevent excessive re-initialization
+let iconUpdateTimeout;
+if (typeof MutationObserver !== 'undefined' && document.body) {
+    const observer = new MutationObserver((mutations) => {
+        // Only update if icons were actually added
+        const hasIconChanges = mutations.some(mutation => 
+            Array.from(mutation.addedNodes).some(node => 
+                node.nodeType === 1 && (node.hasAttribute('data-lucide') || node.querySelector('[data-lucide]'))
+            )
+        );
+        
+        if (hasIconChanges) {
+            clearTimeout(iconUpdateTimeout);
+            iconUpdateTimeout = setTimeout(() => {
+                if (typeof lucide !== 'undefined' && lucide.createIcons) {
+                    lucide.createIcons();
+                }
+            }, 300);
+        }
+    });
 
-if (document.body) {
     observer.observe(document.body, {
         childList: true,
         subtree: true
     });
 }
 
-// Update cart count on page load (if cart.js is loaded)
-if (typeof Cart !== 'undefined') {
-    document.addEventListener('DOMContentLoaded', () => {
-        Cart.updateCartCount();
-    });
-}
