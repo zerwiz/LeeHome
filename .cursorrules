@@ -114,6 +114,11 @@ exports.handler = async (event) => {
 - Create checkout sessions via fetch to Netlify function
 - Handle redirects to success/cancel pages
 
+## Community Links
+- **Discord Community**: https://discord.gg/UhsYV4aytG
+  - Use this link for all Discord buttons and references throughout the site
+  - Always open Discord links in a new tab (`target="_blank"`)
+
 ## Git Workflow
 - Commit messages should be clear and descriptive
 - Keep commits focused on single features/fixes
