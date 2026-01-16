@@ -1,6 +1,6 @@
 # Stripe Integration Setup Guide
 
-This guide will walk you through setting up Stripe payment processing for the Nexus Academy website.
+This guide will walk you through setting up Stripe payment processing for the Zeediva Academy website.
 
 ## Prerequisites
 

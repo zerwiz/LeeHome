@@ -1,6 +1,6 @@
-# Nexus Academy Homepage
+# Zeediva Academy Homepage
 
-A modern, responsive homepage for Nexus Academy - an AI-powered digital commerce education platform. Built with vanilla HTML, CSS, and JavaScript for Netlify hosting.
+A modern, responsive homepage for Zeediva Academy - an AI-powered digital commerce education platform. Built with vanilla HTML, CSS, and JavaScript for Netlify hosting.
 
 **GitHub Repository:** [https://github.com/zerwiz/LeeHome](https://github.com/zerwiz/LeeHome)
 
@@ -64,7 +64,7 @@ netlify deploy --prod
 
 ```
 .
-├── index.html          # Main HTML file (Nexus Academy homepage)
+├── index.html          # Main HTML file (Zeediva Academy homepage)
 ├── styles.css          # Custom styles and animations
 ├── script.js           # JavaScript functionality (menu, scroll effects)
 ├── netlify.toml        # Netlify configuration
