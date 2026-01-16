@@ -186,4 +186,80 @@ button, a {
     .text-5xl {
         font-size: 2rem;
     }
+    
+    .text-7xl {
+        font-size: 2.5rem;
+    }
+    
+    .text-4xl {
+        font-size: 1.875rem;
+    }
+    
+    .text-3xl {
+        font-size: 1.5rem;
+    }
+}
+
+/* Mobile-specific improvements */
+@media (max-width: 640px) {
+    /* Ensure touch targets are at least 44x44px */
+    button, a[role="button"], input[type="submit"], input[type="button"] {
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    /* Reduce padding on mobile for better space utilization */
+    .p-10 {
+        padding: 1.5rem;
+    }
+    
+    .p-12 {
+        padding: 2rem;
+    }
+    
+    .px-6 {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    .py-16 {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+    
+    .py-32 {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+    
+    /* Ensure forms are readable on mobile */
+    input, textarea, select {
+        font-size: 16px; /* Prevents zoom on iOS */
+    }
+    
+    /* Better spacing for mobile grids */
+    .gap-8 {
+        gap: 1.5rem;
+    }
+    
+    .gap-12 {
+        gap: 2rem;
+    }
+    
+    /* Ensure social media buttons are tappable */
+    .grid.grid-cols-2 a {
+        min-height: 100px;
+    }
+}
+
+/* Prevent horizontal scrolling */
+html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
+/* Ensure images scale on mobile */
+img, svg {
+    max-width: 100%;
+    height: auto;
 }

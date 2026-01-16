@@ -20,10 +20,23 @@ This is a static website project designed for Netlify hosting. The project uses 
 
 ### CSS
 - Use modern CSS features (flexbox, grid, CSS variables)
-- Follow mobile-first responsive design approach
+- **ALWAYS follow mobile-first responsive design approach**
 - Use consistent spacing and typography
 - Keep styles organized and commented
 - Use CSS custom properties for theming when appropriate
+- **Mobile Responsiveness Requirements:**
+  - All pages MUST be fully functional and visually appealing on mobile devices (320px and up)
+  - Use Tailwind responsive breakpoints: `sm:` (640px), `md:` (768px), `lg:` (1024px), `xl:` (1280px)
+  - Test all interactive elements (buttons, forms, navigation) on mobile
+  - Ensure text is readable without zooming (minimum 16px font size for body text)
+  - Navigation must have a mobile menu that works on all screen sizes
+  - Forms and inputs must be easily tappable (minimum 44x44px touch targets)
+  - Images and media must scale appropriately
+  - Grid layouts should stack vertically on mobile (use `grid-cols-1` as base)
+  - Padding and margins should be reduced on mobile for better space utilization
+  - All modals, dropdowns, and overlays must work on mobile
+  - Horizontal scrolling should be avoided
+  - Touch gestures should be considered for mobile interactions
 
 ### JavaScript
 - Use modern ES6+ syntax
@@ -40,11 +53,22 @@ This is a static website project designed for Netlify hosting. The project uses 
 
 ## Best Practices
 - Keep code clean and well-commented
-- Test on multiple browsers and devices
+- **Test on multiple browsers and devices (especially mobile)**
 - Optimize images before adding them
 - Use relative paths for internal links
 - Ensure all external links open in new tabs when appropriate
 - Follow SEO best practices
+- **Mobile Testing Checklist:**
+  - Test on actual mobile devices when possible
+  - Use browser dev tools to test different screen sizes
+  - Verify navigation menu works on mobile
+  - Check that all buttons and links are easily tappable
+  - Ensure forms are usable on mobile keyboards
+  - Verify text is readable without horizontal scrolling
+  - Test cart functionality on mobile
+  - Verify checkout process works on mobile
+  - Check that images and videos load properly on mobile
+  - Ensure social media links work on mobile
 
 ## Performance
 - Minimize external dependencies
