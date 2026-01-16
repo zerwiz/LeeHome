@@ -61,9 +61,13 @@ function initializeNavigation() {
                 if (scrolled) {
                     navbar.classList.remove('bg-transparent', 'py-5');
                     navbar.classList.add('bg-slate-950/90', 'backdrop-blur-xl', 'border-b', 'border-white/10', 'py-3');
+                    // Ensure border is always applied consistently
+                    navbar.style.borderBottom = '1px solid rgba(255, 255, 255, 0.1)';
                 } else {
                     navbar.classList.remove('bg-slate-950/90', 'backdrop-blur-xl', 'border-b', 'border-white/10', 'py-3');
                     navbar.classList.add('bg-transparent', 'py-5');
+                    // Remove border when not scrolled
+                    navbar.style.borderBottom = 'none';
                 }
             }
         };

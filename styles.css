@@ -116,6 +116,27 @@ button, a {
     transition: all 0.3s ease;
 }
 
+/* Fix for navbar border issue on hover */
+#navbar {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+#navbar.border-b {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+#navbar:hover {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+#navbar.border-b:hover {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
 /* Ensure proper rendering of gradients */
 .bg-gradient-to-tr {
     background-image: linear-gradient(to top right, var(--tw-gradient-stops));
