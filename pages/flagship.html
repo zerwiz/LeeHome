@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Flagship Program - Nexus Academy">
-    <title>Flagship Program - Nexus Academy</title>
+    <meta name="description" content="Applied AI & MLOps Engineering - Flagship Program - Nexus Academy">
+    <title>Applied AI & MLOps Engineering - Nexus Academy</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="../styles.css">
@@ -28,11 +28,11 @@
             <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-400">
                 <a href="../index.html" class="hover:text-white transition-colors">Home</a>
                 <a href="courses.html" class="hover:text-white transition-colors">Courses</a>
-                <a href="../shop.html" class="hover:text-white transition-colors">Shop</a>
+                <a href="shop.html" class="hover:text-white transition-colors">Shop</a>
                 <a href="flagship.html" class="text-white font-semibold">Flagship</a>
                 <a href="community.html" class="hover:text-white transition-colors">Community</a>
                 <a href="testimonials.html" class="hover:text-white transition-colors">Testimonials</a>
-                <a href="../cart.html" class="relative hover:text-white transition-colors">
+                <a href="cart.html" class="relative hover:text-white transition-colors">
                     <i data-lucide="shopping-cart" class="w-5 h-5"></i>
                     <span id="cartCount" class="absolute -top-2 -right-2 bg-indigo-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center hidden">0</span>
                 </a>
@@ -48,110 +48,395 @@
         <div id="mobileMenu" class="hidden md:hidden absolute top-full left-0 w-full bg-slate-900 border-b border-white/10 p-6 flex flex-col gap-4">
             <a href="../index.html" class="text-lg py-2 mobile-nav-link">Home</a>
             <a href="courses.html" class="text-lg py-2 mobile-nav-link">Courses</a>
-            <a href="../shop.html" class="text-lg py-2 mobile-nav-link">Shop</a>
+            <a href="shop.html" class="text-lg py-2 mobile-nav-link">Shop</a>
             <a href="flagship.html" class="text-lg py-2 mobile-nav-link">Flagship</a>
             <a href="community.html" class="text-lg py-2 mobile-nav-link">Community</a>
             <a href="testimonials.html" class="text-lg py-2 mobile-nav-link">Testimonials</a>
-            <a href="../cart.html" class="text-lg py-2 mobile-nav-link flex items-center gap-2">
+            <a href="cart.html" class="text-lg py-2 mobile-nav-link flex items-center gap-2">
                 <i data-lucide="shopping-cart" class="w-5 h-5"></i>
                 Cart (<span id="mobileCartCount">0</span>)
             </a>
         </div>
     </nav>
 
-    <!-- Flagship Course -->
-    <section class="pt-32 pb-32 relative">
+    <!-- Hero Section -->
+    <section class="pt-32 pb-16 relative overflow-hidden">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[600px] bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-indigo-500/15 via-transparent to-transparent pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-12">
+                <div class="inline-flex items-center gap-3 px-4 py-2 rounded-xl bg-amber-500/10 text-amber-400 text-xs font-black uppercase tracking-widest mb-8 border border-amber-500/20">
+                    <i data-lucide="star" class="w-3.5 h-3.5 fill-amber-400"></i>
+                    Professional Certification
+                </div>
+                <h1 class="text-5xl md:text-7xl font-black mb-6 leading-[1.1]">
+                    Applied AI & <br />
+                    <span class="text-indigo-400">MLOps Engineering</span>
+                </h1>
+                <div class="flex flex-wrap items-center justify-center gap-6 text-lg text-slate-300 mb-8">
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="dollar-sign" class="w-5 h-5 text-indigo-400"></i>
+                        <span class="font-bold">$5,000</span>
+                        <span class="text-slate-500 text-sm">(or $850/month for 6 months)</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="clock" class="w-5 h-5 text-cyan-400"></i>
+                        <span>16 Weeks</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="calendar" class="w-5 h-5 text-emerald-400"></i>
+                        <span>Part-Time (15-20 hrs/week)</span>
+                    </div>
+                </div>
+                <p class="text-xl text-slate-400 max-w-3xl mx-auto mb-8">
+                    <strong class="text-white">Format:</strong> Hybrid (Self-paced content + 2x Weekly Live Labs)<br>
+                    <strong class="text-white">Prerequisites:</strong> Proficiency in Python & Basic Statistics
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Program Overview -->
+    <section class="py-16 relative">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="relative rounded-[3rem] bg-gradient-to-br from-indigo-900/30 via-slate-900 to-slate-950 border border-indigo-500/20 p-8 md:p-20 overflow-hidden shadow-2xl">
-                <div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image: url('https://www.transparenttextures.com/patterns/carbon-fibre.png');"></div>
-                <div class="absolute -bottom-24 -left-24 w-[500px] h-[500px] bg-indigo-600/20 rounded-full blur-[120px]"></div>
-                
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
-                    <div>
-                        <div class="inline-flex items-center gap-3 px-4 py-2 rounded-xl bg-amber-500/10 text-amber-400 text-xs font-black uppercase tracking-widest mb-8 border border-amber-500/20">
-                            <i data-lucide="star" class="w-3.5 h-3.5 fill-amber-400"></i>
-                            Professional Certification
-                        </div>
-                        <h1 class="text-5xl md:text-6xl font-black mb-8 leading-[1.1]">
-                            Build Your Vision <br />
-                            <span class="text-indigo-400">Powered by AI</span>
-                        </h1>
-                        <p class="text-slate-300 text-xl mb-10 leading-relaxed">
-                            Live course hosted by Nexus Academy. The ultimate curriculum for the "One-Person Tech Titan." Learn to design, develop, and deploy full-scale software solutions using advanced AI models—no traditional coding experience required.
-                        </p>
+            <div class="p-8 md:p-12 rounded-3xl bg-slate-900/40 border border-white/5 mb-12">
+                <h2 class="text-3xl md:text-4xl font-black mb-6">Program Overview</h2>
+                <p class="text-xl text-slate-300 leading-relaxed">
+                    Unlike cheaper courses that focus solely on model theory, this curriculum focuses on <strong class="text-indigo-400">production</strong>. You will not just train models in Jupyter Notebooks; you will deploy them as scalable microservices on AWS/GCP.
+                </p>
+            </div>
 
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-12">
-                            <div class="flex items-center gap-4 bg-white/5 p-4 rounded-2xl border border-white/5">
-                                <div class="w-10 h-10 rounded-xl bg-indigo-500/20 flex items-center justify-center">
-                                    <i data-lucide="check-circle" class="w-5 h-5 text-indigo-400"></i>
-                                </div>
-                                <span class="text-slate-200 font-bold text-sm uppercase tracking-wider">No-Code App Architecture</span>
-                            </div>
-                            <div class="flex items-center gap-4 bg-white/5 p-4 rounded-2xl border border-white/5">
-                                <div class="w-10 h-10 rounded-xl bg-indigo-500/20 flex items-center justify-center">
-                                    <i data-lucide="check-circle" class="w-5 h-5 text-indigo-400"></i>
-                                </div>
-                                <span class="text-slate-200 font-bold text-sm uppercase tracking-wider">Custom AI Agents</span>
-                            </div>
-                            <div class="flex items-center gap-4 bg-white/5 p-4 rounded-2xl border border-white/5">
-                                <div class="w-10 h-10 rounded-xl bg-indigo-500/20 flex items-center justify-center">
-                                    <i data-lucide="check-circle" class="w-5 h-5 text-indigo-400"></i>
-                                </div>
-                                <span class="text-slate-200 font-bold text-sm uppercase tracking-wider">Cloud Deployment</span>
-                            </div>
-                            <div class="flex items-center gap-4 bg-white/5 p-4 rounded-2xl border border-white/5">
-                                <div class="w-10 h-10 rounded-xl bg-indigo-500/20 flex items-center justify-center">
-                                    <i data-lucide="check-circle" class="w-5 h-5 text-indigo-400"></i>
-                                </div>
-                                <span class="text-slate-200 font-bold text-sm uppercase tracking-wider">API Monetization</span>
-                            </div>
+            <!-- Instructors -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+                <!-- Craig Martin -->
+                <div class="p-8 rounded-2xl bg-slate-900/40 border border-white/5">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-16 h-16 bg-indigo-600 rounded-2xl flex items-center justify-center">
+                            <i data-lucide="user" class="w-8 h-8 text-white"></i>
                         </div>
-
-                        <div class="flex flex-col sm:flex-row items-center gap-6">
-                            <a href="shop.html" class="w-full sm:w-auto px-12 py-6 bg-white text-slate-950 rounded-2xl font-black text-xl hover:scale-105 transition-all shadow-2xl shadow-white/10 text-center">
-                                Apply for Next Cohort
-                            </a>
-                            <div class="flex -space-x-3">
-                                <div class="w-10 h-10 rounded-full border-2 border-slate-900 bg-slate-800 flex items-center justify-center">
-                                    <i data-lucide="users" class="w-3.5 h-3.5"></i>
-                                </div>
-                                <div class="w-10 h-10 rounded-full border-2 border-slate-900 bg-slate-800 flex items-center justify-center">
-                                    <i data-lucide="users" class="w-3.5 h-3.5"></i>
-                                </div>
-                                <div class="w-10 h-10 rounded-full border-2 border-slate-900 bg-slate-800 flex items-center justify-center">
-                                    <i data-lucide="users" class="w-3.5 h-3.5"></i>
-                                </div>
-                                <div class="w-10 h-10 rounded-full border-2 border-slate-900 bg-slate-800 flex items-center justify-center text-[10px] font-bold">
-                                    +4k
-                                </div>
-                            </div>
+                        <div>
+                            <h3 class="text-2xl font-bold">Craig Martin</h3>
+                            <p class="text-slate-400">Principal DevSecOps Engineering Leader</p>
                         </div>
                     </div>
+                    <p class="text-slate-300 mb-6 leading-relaxed">
+                        Craig is a results-driven leader with a proven track record of empowering teams to achieve excellence in securing and optimizing software development lifecycles. With a focus on Secure AI Platform development, he brings a unique blend of visionary thinking and hands-on expertise.
+                    </p>
+                    <div class="mb-6">
+                        <h4 class="font-bold text-white mb-3">Industry Portfolio</h4>
+                        <ul class="space-y-2 text-sm text-slate-400">
+                            <li>• RedHat: Secure AI Platform development</li>
+                            <li>• PerceptiLabs: AI Modeling simplified</li>
+                            <li>• GE Digital: Predix secure cloud transformation</li>
+                            <li>• Intel Media: Video transcoding and streaming at scale</li>
+                            <li>• Verizon: Over-the-air media streaming services</li>
+                        </ul>
+                    </div>
+                    <div class="mb-6">
+                        <h4 class="font-bold text-white mb-3">Expertise</h4>
+                        <ul class="space-y-2 text-sm text-slate-400">
+                            <li>• Lead DevSecOps Initiatives</li>
+                            <li>• Futuristic Vision & Emerging Technologies</li>
+                            <li>• Strategic Planning & Roadmaps</li>
+                        </ul>
+                    </div>
+                    <p class="italic text-slate-300 mb-4">"My vision is to create a future where DevSecOps practices are at the forefront of every development endeavor."</p>
+                    <a href="https://www.nordicglobaltrade.com/craig-martin/" target="_blank" class="text-indigo-400 hover:text-indigo-300 text-sm font-semibold flex items-center gap-2">
+                        Connect with Craig <i data-lucide="external-link" class="w-4 h-4"></i>
+                    </a>
+                </div>
 
-                    <div class="relative group">
-                        <div class="absolute inset-0 bg-indigo-500/20 rounded-[2.5rem] blur-3xl group-hover:bg-indigo-500/30 transition-all"></div>
-                        <div class="relative aspect-[4/5] md:aspect-square rounded-[2.5rem] bg-slate-900 border border-white/10 shadow-2xl overflow-hidden p-8 flex flex-col justify-center">
-                            <div class="space-y-6">
-                                <div class="flex items-center justify-between">
-                                    <div class="flex gap-2">
-                                        <div class="w-3 h-3 rounded-full bg-red-500"></div>
-                                        <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
-                                        <div class="w-3 h-3 rounded-full bg-green-500"></div>
-                                    </div>
-                                    <div class="text-[10px] font-mono text-slate-600 uppercase tracking-widest">nexus-engine.sys</div>
-                                </div>
-                                <div class="p-6 rounded-2xl bg-black/40 border border-white/5 font-mono text-sm space-y-3">
-                                    <div class="text-indigo-400">const <span class="text-cyan-300">app</span> = <span class="text-white">new</span> <span class="text-emerald-400">AIGenerator</span>();</div>
-                                    <div class="text-indigo-400">app.<span class="text-pink-400">build</span>(<span class="text-amber-200">"SaaS Finance Platform"</span>);</div>
-                                    <div class="text-emerald-500 ml-4 font-bold">Generated 48 frontend components.</div>
-                                </div>
-                                <div class="h-32 rounded-2xl bg-gradient-to-tr from-indigo-500 to-cyan-400 opacity-20 flex items-center justify-center group-hover:opacity-40 transition-opacity">
-                                    <i data-lucide="layout" class="w-12 h-12 text-white animate-bounce"></i>
-                                </div>
-                            </div>
+                <!-- Josef Lindbom -->
+                <div class="p-8 rounded-2xl bg-slate-900/40 border border-white/5">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-16 h-16 bg-cyan-600 rounded-2xl flex items-center justify-center">
+                            <i data-lucide="user" class="w-8 h-8 text-white"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold">Josef Lindbom</h3>
+                            <p class="text-slate-400">Founder & CEO — Nordic Global Solutions</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-300 mb-6 leading-relaxed">
+                        Josef Lindbom is a fifth-generation builder, entrepreneur, and creative visionary with roots in both the Nordic construction industry and the global extreme sports scene. Raised in boardrooms and on construction sites, he developed a deep understanding of structure, leadership, and execution from an early age.
+                    </p>
+                    <div class="mb-6">
+                        <h4 class="font-bold text-white mb-3">Industry Portfolio & Ventures</h4>
+                        <ul class="space-y-2 text-sm text-slate-400">
+                            <li>• Nordic Global Trade (NGT): Leading AI and communication systems</li>
+                            <li>• WHN Chat & NorthStarOS: Pioneering emotional intelligence in technology</li>
+                            <li>• Event Industry: Founded and produced extreme sports festivals</li>
+                            <li>• Resonating Path: Projects rooted in ancient wisdom and culture</li>
+                        </ul>
+                    </div>
+                    <div class="mb-6">
+                        <h4 class="font-bold text-white mb-3">Expertise</h4>
+                        <ul class="space-y-2 text-sm text-slate-400">
+                            <li>• Venture Building & Brand Scaling</li>
+                            <li>• Strategic Leadership & Visionary Design</li>
+                            <li>• Market Expansion & High-Impact Campaigns</li>
+                        </ul>
+                    </div>
+                    <p class="italic text-slate-300 mb-4">"My leadership blends hands-on business experience, visionary design, and a deep belief in building systems that empower people and ideas to grow."</p>
+                    <div class="flex flex-col gap-2">
+                        <a href="https://www.nordicglobaltrade.com/Josef-lindbom" target="_blank" class="text-indigo-400 hover:text-indigo-300 text-sm font-semibold flex items-center gap-2">
+                            Connect with Josef <i data-lucide="external-link" class="w-4 h-4"></i>
+                        </a>
+                        <a href="https://www.resonatingpath.com" target="_blank" class="text-cyan-400 hover:text-cyan-300 text-sm font-semibold flex items-center gap-2">
+                            www.resonatingpath.com <i data-lucide="external-link" class="w-4 h-4"></i>
+                        </a>
+                        <a href="https://www.nordicglobalsolutions.com" target="_blank" class="text-emerald-400 hover:text-emerald-300 text-sm font-semibold flex items-center gap-2">
+                            www.nordicglobalsolutions.com <i data-lucide="external-link" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- What Your $5,000 Buys -->
+            <div class="p-8 md:p-12 rounded-3xl bg-gradient-to-br from-indigo-900/30 via-slate-900 to-slate-950 border border-indigo-500/20 mb-16">
+                <h2 class="text-3xl md:text-4xl font-black mb-8">What Your $5,000 Buys</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="p-6 rounded-2xl bg-white/5 border border-white/5">
+                        <i data-lucide="users" class="w-8 h-8 text-indigo-400 mb-4"></i>
+                        <h3 class="font-bold mb-2">1-on-1 Mentorship</h3>
+                        <ul class="text-sm text-slate-400 space-y-1">
+                            <li>• Craig Martin: Weekly 45-min calls</li>
+                            <li>• Jonne: Daily 60-min sessions</li>
+                            <li>• Josef: Weekly 60-min sessions</li>
+                            <li>• Lee: Weekly 60-min sessions</li>
+                        </ul>
+                    </div>
+                    <div class="p-6 rounded-2xl bg-white/5 border border-white/5">
+                        <i data-lucide="message-square" class="w-8 h-8 text-cyan-400 mb-4"></i>
+                        <h3 class="font-bold mb-2">Community Access</h3>
+                        <p class="text-sm text-slate-400">Access to Discord server and behind-the-scenes community platform</p>
+                    </div>
+                    <div class="p-6 rounded-2xl bg-white/5 border border-white/5">
+                        <i data-lucide="building" class="w-8 h-8 text-emerald-400 mb-4"></i>
+                        <h3 class="font-bold mb-2">Physical Access</h3>
+                        <p class="text-sm text-slate-400">Access to our Office in England</p>
+                    </div>
+                    <div class="p-6 rounded-2xl bg-white/5 border border-white/5">
+                        <i data-lucide="code" class="w-8 h-8 text-pink-400 mb-4"></i>
+                        <h3 class="font-bold mb-2">Human Code Review</h3>
+                        <p class="text-sm text-slate-400">Every line of code reviewed by Jonne (not an autograder)</p>
+                    </div>
+                    <div class="p-6 rounded-2xl bg-white/5 border border-white/5">
+                        <i data-lucide="server" class="w-8 h-8 text-amber-400 mb-4"></i>
+                        <h3 class="font-bold mb-2">Infrastructure Access</h3>
+                        <ul class="text-sm text-slate-400 space-y-1">
+                            <li>• 100 hours A100 GPU time</li>
+                            <li>• Server Access</li>
+                            <li>• Hosting Access</li>
+                        </ul>
+                    </div>
+                    <div class="p-6 rounded-2xl bg-white/5 border border-white/5">
+                        <i data-lucide="briefcase" class="w-8 h-8 text-purple-400 mb-4"></i>
+                        <h3 class="font-bold mb-2">Career Concierge</h3>
+                        <p class="text-sm text-slate-400">Resume rewrite and 3 mock technical interviews</p>
+                    </div>
+                    <div class="p-6 rounded-2xl bg-white/5 border border-white/5">
+                        <i data-lucide="briefcase" class="w-8 h-8 text-indigo-400 mb-4"></i>
+                        <h3 class="font-bold mb-2">Project Integration</h3>
+                        <p class="text-sm text-slate-400">Possibility to join the company's internal projects</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Curriculum -->
+            <div class="mb-16">
+                <h2 class="text-3xl md:text-4xl font-black mb-12 text-center">16-Week Curriculum Breakdown</h2>
+                
+                <!-- Phase 1 -->
+                <div class="mb-12 p-8 rounded-2xl bg-slate-900/40 border border-white/5">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-12 h-12 bg-indigo-600 rounded-xl flex items-center justify-center">
+                            <span class="text-2xl font-black">1</span>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold">Phase 1: Data Engineering & Foundations</h3>
+                            <p class="text-slate-400">Weeks 1-4 | Focus: Building robust data pipelines</p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="p-6 rounded-xl bg-white/5 border border-white/5">
+                            <h4 class="font-bold mb-3 text-indigo-400">Week 1: Advanced Python & Vectorization</h4>
+                            <ul class="text-sm text-slate-400 space-y-2">
+                                <li>• Writing efficient NumPy/Pandas code</li>
+                                <li>• Type hinting and unit testing for data science</li>
+                            </ul>
+                        </div>
+                        <div class="p-6 rounded-xl bg-white/5 border border-white/5">
+                            <h4 class="font-bold mb-3 text-indigo-400">Week 2: SQL & NoSQL for AI</h4>
+                            <ul class="text-sm text-slate-400 space-y-2">
+                                <li>• Complex joins and window functions</li>
+                                <li>• Vector databases (Pinecone/Weaviate) for RAG</li>
+                            </ul>
+                        </div>
+                        <div class="p-6 rounded-xl bg-white/5 border border-white/5">
+                            <h4 class="font-bold mb-3 text-indigo-400">Week 3: Data Cleaning at Scale</h4>
+                            <ul class="text-sm text-slate-400 space-y-2">
+                                <li>• Handling missing data, outliers, class imbalance</li>
+                                <li>• Building reproducible pipelines with Airflow</li>
+                            </ul>
+                        </div>
+                        <div class="p-6 rounded-xl bg-white/5 border border-white/5">
+                            <h4 class="font-bold mb-3 text-indigo-400">Week 4: Project 1 - The Data Pipeline</h4>
+                            <p class="text-sm text-slate-400">Build an automated ETL pipeline that scrapes web data, cleans it, and stores it in a vector database.</p>
                         </div>
                     </div>
                 </div>
+
+                <!-- Phase 2 -->
+                <div class="mb-12 p-8 rounded-2xl bg-slate-900/40 border border-white/5">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-12 h-12 bg-cyan-600 rounded-xl flex items-center justify-center">
+                            <span class="text-2xl font-black">2</span>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold">Phase 2: Machine Learning & Deep Learning</h3>
+                            <p class="text-slate-400">Weeks 5-10 | Focus: From Scikit-Learn to Transformers</p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="p-6 rounded-xl bg-white/5 border border-white/5">
+                            <h4 class="font-bold mb-3 text-cyan-400">Week 5: Supervised Learning Deep Dive</h4>
+                            <ul class="text-sm text-slate-400 space-y-2">
+                                <li>• Gradient Boosting (XGBoost/LightGBM)</li>
+                                <li>• Hyperparameter tuning with Optuna</li>
+                            </ul>
+                        </div>
+                        <div class="p-6 rounded-xl bg-white/5 border border-white/5">
+                            <h4 class="font-bold mb-3 text-cyan-400">Week 6: Neural Networks with PyTorch</h4>
+                            <ul class="text-sm text-slate-400 space-y-2">
+                                <li>• Tensors, autograd, and backpropagation</li>
+                                <li>• Building MLP and CNN architectures from scratch</li>
+                            </ul>
+                        </div>
+                        <div class="p-6 rounded-xl bg-white/5 border border-white/5">
+                            <h4 class="font-bold mb-3 text-cyan-400">Week 7: Computer Vision</h4>
+                            <ul class="text-sm text-slate-400 space-y-2">
+                                <li>• Transfer learning (ResNet, EfficientNet)</li>
+                                <li>• Image segmentation and object detection (YOLO)</li>
+                            </ul>
+                        </div>
+                        <div class="p-6 rounded-xl bg-white/5 border border-white/5">
+                            <h4 class="font-bold mb-3 text-cyan-400">Week 8: NLP & LLMs</h4>
+                            <ul class="text-sm text-slate-400 space-y-2">
+                                <li>• Transformers architecture</li>
+                                <li>• Fine-tuning Llama/Mistral with HuggingFace PEFT and LoRA</li>
+                            </ul>
+                        </div>
+                        <div class="p-6 rounded-xl bg-white/5 border border-white/5">
+                            <h4 class="font-bold mb-3 text-cyan-400">Week 9: Generative AI & RAG</h4>
+                            <ul class="text-sm text-slate-400 space-y-2">
+                                <li>• Building RAG systems (LangChain)</li>
+                                <li>• Prompt Engineering vs. Fine-tuning trade-offs</li>
+                            </ul>
+                        </div>
+                        <div class="p-6 rounded-xl bg-white/5 border border-white/5">
+                            <h4 class="font-bold mb-3 text-cyan-400">Week 10: Project 2 - The Custom LLM</h4>
+                            <p class="text-sm text-slate-400">Fine-tune a small LLM on a specific legal or medical dataset and expose it via a chat interface.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phase 3 -->
+                <div class="mb-12 p-8 rounded-2xl bg-slate-900/40 border border-white/5">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-12 h-12 bg-emerald-600 rounded-xl flex items-center justify-center">
+                            <span class="text-2xl font-black">3</span>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold">Phase 3: MLOps & Deployment</h3>
+                            <p class="text-slate-400">Weeks 11-14 | Focus: The "Engineering" in AI Engineering</p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="p-6 rounded-xl bg-white/5 border border-white/5">
+                            <h4 class="font-bold mb-3 text-emerald-400">Week 11: Containerization</h4>
+                            <ul class="text-sm text-slate-400 space-y-2">
+                                <li>• Dockerizing ML models</li>
+                                <li>• Multi-stage builds for GPU-enabled containers</li>
+                            </ul>
+                        </div>
+                        <div class="p-6 rounded-xl bg-white/5 border border-white/5">
+                            <h4 class="font-bold mb-3 text-emerald-400">Week 12: Model Serving & API Design</h4>
+                            <ul class="text-sm text-slate-400 space-y-2">
+                                <li>• Building high-performance APIs with FastAPI</li>
+                                <li>• Batch vs. Real-time inference patterns</li>
+                            </ul>
+                        </div>
+                        <div class="p-6 rounded-xl bg-white/5 border border-white/5">
+                            <h4 class="font-bold mb-3 text-emerald-400">Week 13: Cloud Deployment (AWS/GCP)</h4>
+                            <ul class="text-sm text-slate-400 space-y-2">
+                                <li>• Deploying to AWS Lambda vs. SageMaker</li>
+                                <li>• Setting up CI/CD pipelines (GitHub Actions)</li>
+                            </ul>
+                        </div>
+                        <div class="p-6 rounded-xl bg-white/5 border border-white/5">
+                            <h4 class="font-bold mb-3 text-emerald-400">Week 14: Monitoring & Observability</h4>
+                            <ul class="text-sm text-slate-400 space-y-2">
+                                <li>• Tracking model drift</li>
+                                <li>• Tools: MLflow, Prometheus, Grafana</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phase 4 -->
+                <div class="mb-12 p-8 rounded-2xl bg-slate-900/40 border border-white/5">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-12 h-12 bg-amber-600 rounded-xl flex items-center justify-center">
+                            <span class="text-2xl font-black">4</span>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold">Phase 4: Capstone & Career</h3>
+                            <p class="text-slate-400">Weeks 15-16</p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="p-6 rounded-xl bg-white/5 border border-white/5">
+                            <h4 class="font-bold mb-3 text-amber-400">Week 15: Capstone Development</h4>
+                            <p class="text-sm text-slate-400">Student selects a real-world problem. Must include a Data Pipeline, a Trained Model, and a User Interface.</p>
+                        </div>
+                        <div class="p-6 rounded-xl bg-white/5 border border-white/5">
+                            <h4 class="font-bold mb-3 text-amber-400">Week 16: Demo Day & Career Prep</h4>
+                            <ul class="text-sm text-slate-400 space-y-2">
+                                <li>• Live presentation to hiring partners</li>
+                                <li>• Technical mock interviews (System Design for ML)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Included Projects -->
+            <div class="p-8 md:p-12 rounded-3xl bg-gradient-to-br from-indigo-900/30 via-slate-900 to-slate-950 border border-indigo-500/20 mb-16">
+                <h2 class="text-3xl md:text-4xl font-black mb-8">Included Projects (Portfolio Ready)</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="p-6 rounded-2xl bg-white/5 border border-white/5">
+                        <h3 class="text-xl font-bold mb-4 text-indigo-400">Real-Estate Price Predictor API</h3>
+                        <p class="text-sm text-slate-400 mb-4">Tech: XGBoost, FastAPI, Docker, AWS EC2</p>
+                        <p class="text-sm text-slate-300 font-semibold">Skill: End-to-end MLOps</p>
+                    </div>
+                    <div class="p-6 rounded-2xl bg-white/5 border border-white/5">
+                        <h3 class="text-xl font-bold mb-4 text-cyan-400">Semantic Search Engine for Code</h3>
+                        <p class="text-sm text-slate-400 mb-4">Tech: PyTorch, BERT, Pinecone, React Frontend</p>
+                        <p class="text-sm text-slate-300 font-semibold">Skill: Vector Search & NLP</p>
+                    </div>
+                    <div class="p-6 rounded-2xl bg-white/5 border border-white/5">
+                        <h3 class="text-xl font-bold mb-4 text-emerald-400">Autonomous Agent for Scheduling</h3>
+                        <p class="text-sm text-slate-400 mb-4">Tech: LangChain, OpenAI API, Python</p>
+                        <p class="text-sm text-slate-300 font-semibold">Skill: Agentic Workflows</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="text-center">
+                <a href="shop.html" class="inline-block px-12 py-6 bg-indigo-600 hover:bg-indigo-500 text-white rounded-2xl font-black text-xl hover:scale-105 transition-all shadow-2xl shadow-indigo-600/40">
+                    Apply for Next Cohort
+                </a>
             </div>
         </div>
     </section>
