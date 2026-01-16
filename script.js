@@ -35,7 +35,8 @@ function initializeNavigation() {
         // Close mobile menu when clicking on links
         const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
         mobileNavLinks.forEach(link => {
-            link.addEventListener('click', () => {
+            link.addEventListener('click', (e) => {
+                // Don't prevent default - allow navigation to proceed
                 isMenuOpen = false;
                 mobileMenu.classList.add('hidden');
                 const icon = menuToggle.querySelector('i');
@@ -43,7 +44,8 @@ function initializeNavigation() {
                     icon.setAttribute('data-lucide', 'menu');
                     lucide.createIcons();
                 }
-            });
+                // Navigation will proceed normally
+            }, { passive: true });
         });
     }
 
@@ -78,23 +80,28 @@ function initializeCart() {
 }
 
 function initializeSmoothScrolling() {
-    // Smooth scrolling for anchor links
+    // Smooth scrolling for anchor links ONLY (not external links)
+    // This only affects links starting with #, so it won't interfere with page navigation
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             const href = this.getAttribute('href');
+            // Only handle anchor links that are on the same page
             if (href === '#' || !href) return;
             
-            e.preventDefault();
             const target = document.querySelector(href);
             if (target) {
+                e.preventDefault();
                 const offsetTop = target.offsetTop - 80; // Account for fixed navbar
                 window.scrollTo({
                     top: offsetTop,
                     behavior: 'smooth'
                 });
             }
+            // If target doesn't exist, let the browser handle it normally
         });
     });
+    // Note: Non-anchor links (like pages/shop.html) are not modified here
+    // They will work normally without any JavaScript interference
 }
 
 function initializeIcons() {
