@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Next-Gen Development with AI - Nexus Academy">
+    <title>Next-Gen Development with AI - Nexus Academy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 font-sans">
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-transparent py-5">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <a href="../index.html" class="flex items-center gap-2">
+                    <div class="w-10 h-10 bg-gradient-to-tr from-indigo-600 to-cyan-400 rounded-xl flex items-center justify-center shadow-lg shadow-indigo-500/20">
+                        <i data-lucide="zap" class="text-white fill-white w-6 h-6"></i>
+                    </div>
+                    <span class="text-xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-400">
+                        NEXUS ACADEMY
+                    </span>
+                </a>
+            </div>
+
+            <!-- Desktop Nav -->
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-400">
+                <a href="../index.html" class="hover:text-white transition-colors">Home</a>
+                <a href="courses.html" class="hover:text-white transition-colors">Courses</a>
+                <a href="shop.html" class="hover:text-white transition-colors">Shop</a>
+                <a href="flagship.html" class="hover:text-white transition-colors">Flagship</a>
+                <a href="community.html" class="hover:text-white transition-colors">Community</a>
+                <a href="testimonials.html" class="hover:text-white transition-colors">Testimonials</a>
+                <a href="cart.html" class="relative hover:text-white transition-colors">
+                    <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+                    <span id="cartCount" class="absolute -top-2 -right-2 bg-indigo-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center hidden">0</span>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button id="menuToggle" class="md:hidden text-slate-300 hover:text-white">
+                <i data-lucide="menu" class="w-7 h-7"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden absolute top-full left-0 w-full bg-slate-900 border-b border-white/10 p-6 flex flex-col gap-4">
+            <a href="../index.html" class="text-lg py-2 mobile-nav-link">Home</a>
+            <a href="courses.html" class="text-lg py-2 mobile-nav-link">Courses</a>
+            <a href="shop.html" class="text-lg py-2 mobile-nav-link">Shop</a>
+            <a href="flagship.html" class="text-lg py-2 mobile-nav-link">Flagship</a>
+            <a href="community.html" class="text-lg py-2 mobile-nav-link">Community</a>
+            <a href="testimonials.html" class="text-lg py-2 mobile-nav-link">Testimonials</a>
+            <a href="cart.html" class="text-lg py-2 mobile-nav-link flex items-center gap-2">
+                <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+                Cart (<span id="mobileCartCount">0</span>)
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-16 relative overflow-hidden">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[600px] bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-indigo-500/15 via-transparent to-transparent pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-12">
+                <div class="inline-flex items-center gap-3 px-4 py-2 rounded-xl bg-amber-500/10 text-amber-400 text-xs font-black uppercase tracking-widest mb-8 border border-amber-500/20">
+                    <i data-lucide="graduation-cap" class="w-3.5 h-3.5"></i>
+                    University-Grade Curriculum
+                </div>
+                <h1 class="text-5xl md:text-7xl font-black mb-6 leading-[1.1]">
+                    Next-Gen Development <br />
+                    <span class="text-indigo-400">with AI</span>
+                </h1>
+                <div class="flex flex-wrap items-center justify-center gap-6 text-lg text-slate-300 mb-8">
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="clock" class="w-5 h-5 text-indigo-400"></i>
+                        <span><strong>8 Weeks</strong></span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="book-open" class="w-5 h-5 text-cyan-400"></i>
+                        <span><strong>140+ Lessons</strong></span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="flask-conical" class="w-5 h-5 text-emerald-400"></i>
+                        <span><strong>Hands-on Labs</strong></span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="award" class="w-5 h-5 text-amber-400"></i>
+                        <span><strong>Certification</strong></span>
+                    </div>
+                </div>
+                <p class="text-xl text-slate-400 max-w-3xl mx-auto mb-8">
+                    Master the intersection of human creativity and AI precision. Learn to harness Gemini, Mokka, and Cursor to build, deploy, and scale robust applications.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Description -->
+    <section class="py-16 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="p-8 md:p-12 rounded-3xl bg-slate-900/40 border border-white/5 mb-12">
+                <h2 class="text-3xl md:text-4xl font-black mb-6">Course Description</h2>
+                <p class="text-xl text-slate-300 leading-relaxed mb-6">
+                    Master the intersection of human creativity and AI precision in this comprehensive bootcamp. You'll learn to harness the power of a modern AI developer stack—<strong class="text-indigo-400">Gemini, Mokka, and Cursor</strong>—to build, deploy, and scale robust applications.
+                </p>
+                <p class="text-lg text-slate-400 leading-relaxed mb-6">
+                    The course covers the practical implementation of "Vibe Coding," transitioning from natural language prompts to functional prototypes, and finally to production-ready code. You will discover how to leverage AI's efficiency and safety guarantees to automate critical development tasks, preparing you for real-world challenges in the Nordic and Cortex ecosystems.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+                    <div class="p-6 rounded-2xl bg-white/5 border border-white/5">
+                        <h3 class="font-bold mb-3 text-indigo-400">University-Grade Curriculum</h3>
+                        <p class="text-sm text-slate-400">Based on the same material used at top-tier institutions like Duke, Northwestern, and UC Davis.</p>
+                    </div>
+                    <div class="p-6 rounded-2xl bg-white/5 border border-white/5">
+                        <h3 class="font-bold mb-3 text-cyan-400">Practical & Hands-on</h3>
+                        <p class="text-sm text-slate-400">Build a "Nordic Global Trade" application that serves as a professional portfolio piece.</p>
+                    </div>
+                    <div class="p-6 rounded-2xl bg-white/5 border border-white/5">
+                        <h3 class="font-bold mb-3 text-emerald-400">From Concept to Reality</h3>
+                        <p class="text-sm text-slate-400">We don't just listen to ideas—we help bring them to life with expertise and guidance.</p>
+                    </div>
+                    <div class="p-6 rounded-2xl bg-white/5 border border-white/5">
+                        <h3 class="font-bold mb-3 text-amber-400">Industry Certification</h3>
+                        <p class="text-sm text-slate-400">Earn a shareable digital badge recognized by project leads and enterprise initiatives.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Core Value Pillars -->
+            <div class="mb-16">
+                <h2 class="text-3xl md:text-4xl font-black mb-8 text-center">Core Value Pillars</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="p-6 rounded-2xl bg-gradient-to-br from-indigo-900/30 to-slate-900 border border-indigo-500/20">
+                        <i data-lucide="brain" class="w-10 h-10 text-indigo-400 mb-4"></i>
+                        <h3 class="font-bold mb-3 text-white">AI Developer Ecosystem</h3>
+                        <p class="text-sm text-slate-400">Learn the specific roles of Gemini (Planning), Mokka (Prototyping), and Cursor (Coding).</p>
+                        <p class="text-xs text-slate-500 mt-2">Led by: Josef</p>
+                    </div>
+                    <div class="p-6 rounded-2xl bg-gradient-to-br from-cyan-900/30 to-slate-900 border border-cyan-500/20">
+                        <i data-lucide="sparkles" class="w-10 h-10 text-cyan-400 mb-4"></i>
+                        <h3 class="font-bold mb-3 text-white">Vibe Coding Mastery</h3>
+                        <p class="text-sm text-slate-400">Transition from "thinking" about an app to "describing" it, using Cursor's Agent mode and "YOLO mode" for rapid iteration.</p>
+                        <p class="text-xs text-slate-500 mt-2">Led by: Josef</p>
+                    </div>
+                    <div class="p-6 rounded-2xl bg-gradient-to-br from-emerald-900/30 to-slate-900 border border-emerald-500/20">
+                        <i data-lucide="shield-check" class="w-10 h-10 text-emerald-400 mb-4"></i>
+                        <h3 class="font-bold mb-3 text-white">Enterprise DevSecOps</h3>
+                        <p class="text-sm text-slate-400">Move from personal side projects to modular, secure, and optimized enterprise-level codebases using industry-standard frameworks.</p>
+                        <p class="text-xs text-slate-500 mt-2">Led by: Craig</p>
+                    </div>
+                    <div class="p-6 rounded-2xl bg-gradient-to-br from-amber-900/30 to-slate-900 border border-amber-500/20">
+                        <i data-lucide="network" class="w-10 h-10 text-amber-400 mb-4"></i>
+                        <h3 class="font-bold mb-3 text-white">Nordic/Cortex Integration</h3>
+                        <p class="text-sm text-slate-400">Specific focus on workflows for data analysis, machine learning, and trade-specific tools.</p>
+                        <p class="text-xs text-slate-500 mt-2">Led by: Lee</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Syllabus -->
+            <div class="mb-16">
+                <h2 class="text-3xl md:text-4xl font-black mb-12 text-center">8-Week Syllabus Breakdown</h2>
+                
+                <!-- Week 1 -->
+                <div class="mb-8 p-8 rounded-2xl bg-slate-900/40 border border-white/5">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-12 h-12 bg-indigo-600 rounded-xl flex items-center justify-center">
+                            <span class="text-2xl font-black">1</span>
+                        </div>
+                        <h3 class="text-2xl font-bold">Week 1: Foundations, Setup & Ideation</h3>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="p-4 rounded-xl bg-white/5 border border-white/5">
+                            <h4 class="font-bold mb-2 text-indigo-400">AI Developer Ecosystem (ALL)</h4>
+                            <p class="text-sm text-slate-400">Defining the roles of Gemini, Mokka, and Cursor</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-white/5 border border-white/5">
+                            <h4 class="font-bold mb-2 text-indigo-400">Concept to Reality (ALL)</h4>
+                            <p class="text-sm text-slate-400">Idea generation following Nordic Global Solutions vision</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-white/5 border border-white/5">
+                            <h4 class="font-bold mb-2 text-indigo-400">Tool Installation (Josef)</h4>
+                            <p class="text-sm text-slate-400">Setting up Cursor, Google AI Studio, and Mokka</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-white/5 border border-white/5">
+                            <h4 class="font-bold mb-2 text-indigo-400">AI-Driven Project Scoping (Craig)</h4>
+                            <p class="text-sm text-slate-400">Brainstorming and "Learner Transformation Statement"</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-white/5 border border-white/5">
+                            <h4 class="font-bold mb-2 text-indigo-400">Technical Architecture (Lee)</h4>
+                            <p class="text-sm text-slate-400">Database schema outlining and feature list generation</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-white/5 border border-white/5">
+                            <h4 class="font-bold mb-2 text-indigo-400">Context Preparation (Lee)</h4>
+                            <p class="text-sm text-slate-400">Creating .cursorrules files for session continuity</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Week 2 -->
+                <div class="mb-8 p-8 rounded-2xl bg-slate-900/40 border border-white/5">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-12 h-12 bg-cyan-600 rounded-xl flex items-center justify-center">
+                            <span class="text-2xl font-black">2</span>
+                        </div>
+                        <h3 class="text-2xl font-bold">Week 2: Rapid Prototyping with Mokka</h3>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="p-4 rounded-xl bg-white/5 border border-white/5">
+                            <h4 class="font-bold mb-2 text-cyan-400">No-Code App Generation (Josef)</h4>
+                            <p class="text-sm text-slate-400">Describing apps in natural language or via image-to-prototype</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-white/5 border border-white/5">
+                            <h4 class="font-bold mb-2 text-cyan-400">UI/UX Iteration (Lee)</h4>
+                            <p class="text-sm text-slate-400">Modifying layouts and visual elements without backend code</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-white/5 border border-white/5">
+                            <h4 class="font-bold mb-2 text-cyan-400">Launching the PoC (Craig)</h4>
+                            <p class="text-sm text-slate-400">Deploying a working version for feature validation</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-white/5 border border-white/5">
+                            <h4 class="font-bold mb-2 text-cyan-400">Bridge to Code (Lee)</h4>
+                            <p class="text-sm text-slate-400">Exporting requirements and logic for custom development</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Week 3 -->
+                <div class="mb-8 p-8 rounded-2xl bg-slate-900/40 border border-white/5">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-12 h-12 bg-emerald-600 rounded-xl flex items-center justify-center">
+                            <span class="text-2xl font-black">3</span>
+                        </div>
+                        <h3 class="text-2xl font-bold">Week 3: "Vibe Coding" & Customization with Cursor</h3>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="p-4 rounded-xl bg-white/5 border border-white/5">
+                            <h4 class="font-bold mb-2 text-emerald-400">Intro to Cursor AI (Craig)</h4>
+                            <p class="text-sm text-slate-400">Master Cmd+K and Cmd+L. Optimization techniques and agent setup</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-white/5 border border-white/5">
+                            <h4 class="font-bold mb-2 text-emerald-400">Advanced Configs (Craig)</h4>
+                            <p class="text-sm text-slate-400">Creating configuration files to route tasks to appropriate models</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-white/5 border border-white/5">
+                            <h4 class="font-bold mb-2 text-emerald-400">AI Pair Programming (Lee, Office)</h4>
+                            <p class="text-sm text-slate-400">Working with Cursor Agent to handle complex file contexts</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-white/5 border border-white/5">
+                            <h4 class="font-bold mb-2 text-emerald-400">Test-Driven Development (Lee, Office)</h4>
+                            <p class="text-sm text-slate-400">Implementing "Write tests first" workflow</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-white/5 border border-white/5">
+                            <h4 class="font-bold mb-2 text-emerald-400">Automated Bug Fixing (Craig)</h4>
+                            <p class="text-sm text-slate-400">Utilizing "YOLO mode" and terminal AI for auto-fixing errors</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Week 4 -->
+                <div class="mb-8 p-8 rounded-2xl bg-slate-900/40 border border-white/5">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-12 h-12 bg-amber-600 rounded-xl flex items-center justify-center">
+                            <span class="text-2xl font-black">4</span>
+                        </div>
+                        <h3 class="text-2xl font-bold">Week 4: Scalability, Ecosystems & Capstone</h3>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="p-4 rounded-xl bg-white/5 border border-white/5">
+                            <h4 class="font-bold mb-2 text-amber-400">Building for Nordic/Cortex (ALL)</h4>
+                            <p class="text-sm text-slate-400">Specific requirements for NordicGlobalSolutions</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-white/5 border border-white/5">
+                            <h4 class="font-bold mb-2 text-amber-400">Scalable Development (Craig, NorthStar)</h4>
+                            <p class="text-sm text-slate-400">Implementing robust DevSecOps frameworks</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-white/5 border border-white/5">
+                            <h4 class="font-bold mb-2 text-amber-400">AI-Assisted Version Control (Craig)</h4>
+                            <p class="text-sm text-slate-400">Automated Git workflows and secure commit generation</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-white/5 border border-white/5">
+                            <h4 class="font-bold mb-2 text-amber-400">Final Review & Deploy (ALL)</h4>
+                            <p class="text-sm text-slate-400">Security audits, efficiency checks, and hosting live apps</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Week 5 -->
+                <div class="mb-8 p-8 rounded-2xl bg-slate-900/40 border border-white/5">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-12 h-12 bg-purple-600 rounded-xl flex items-center justify-center">
+                            <span class="text-2xl font-black">5</span>
+                        </div>
+                        <h3 class="text-2xl font-bold">Week 5: Future-Proofing & NorthStar</h3>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="p-4 rounded-xl bg-white/5 border border-white/5">
+                            <h4 class="font-bold mb-2 text-purple-400">Continuous Learning (Office)</h4>
+                            <p class="text-sm text-slate-400">Implementing feedback loops and "Eat your own dogfood" strategies</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-white/5 border border-white/5">
+                            <h4 class="font-bold mb-2 text-purple-400">Build Your Own Tools (Office)</h4>
+                            <p class="text-sm text-slate-400">Transitioning from user to creator by building custom internal tools</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-white/5 border border-white/5">
+                            <h4 class="font-bold mb-2 text-purple-400">Starting NorthStar (Josef, Craig)</h4>
+                            <p class="text-sm text-slate-400">The roadmap for advanced AI development within the ecosystem</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-white/5 border border-white/5">
+                            <h4 class="font-bold mb-2 text-purple-400">Local Intelligence (Office)</h4>
+                            <p class="text-sm text-slate-400">Introduction to SLM and self-hosted models for privacy and cost-efficiency</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-white/5 border border-white/5">
+                            <h4 class="font-bold mb-2 text-purple-400">Futuristic Vision (Craig, Josef)</h4>
+                            <p class="text-sm text-slate-400">Pioneering emerging technologies for future-proofed AI solutions</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-white/5 border border-white/5">
+                            <h4 class="font-bold mb-2 text-purple-400">Team Collaboration (Office / Craig)</h4>
+                            <p class="text-sm text-slate-400">Team programming, GitHub/GitLab workflows, and version control strategy</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Week 6 -->
+                <div class="mb-8 p-8 rounded-2xl bg-slate-900/40 border border-white/5">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-12 h-12 bg-pink-600 rounded-xl flex items-center justify-center">
+                            <span class="text-2xl font-black">6</span>
+                        </div>
+                        <h3 class="text-2xl font-bold">Week 6: Advanced Integration & Data Strategy</h3>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="p-4 rounded-xl bg-white/5 border border-white/5">
+                            <h4 class="font-bold mb-2 text-pink-400">CortexAI Solutions Deep-Dive (Lee)</h4>
+                            <p class="text-sm text-slate-400">Leveraging specialized models for data analysis</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-white/5 border border-white/5">
+                            <h4 class="font-bold mb-2 text-pink-400">Agentic Workflows (Office)</h4>
+                            <p class="text-sm text-slate-400">Moving beyond simple chat to autonomous multi-agent systems</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-white/5 border border-white/5">
+                            <h4 class="font-bold mb-2 text-pink-400">Custom Knowledge Bases (Office)</h4>
+                            <p class="text-sm text-slate-400">Connecting your app to proprietary data safely</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-white/5 border border-white/5">
+                            <h4 class="font-bold mb-2 text-pink-400">Team Collaboration (Office)</h4>
+                            <p class="text-sm text-slate-400">Collaborative development and multi-user environment management</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Week 7 -->
+                <div class="mb-8 p-8 rounded-2xl bg-slate-900/40 border border-white/5">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-12 h-12 bg-red-600 rounded-xl flex items-center justify-center">
+                            <span class="text-2xl font-black">7</span>
+                        </div>
+                        <h3 class="text-2xl font-bold">Week 7: Security & Enterprise Operations</h3>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="p-4 rounded-xl bg-white/5 border border-white/5">
+                            <h4 class="font-bold mb-2 text-red-400">AI Security Auditing (Craig)</h4>
+                            <p class="text-sm text-slate-400">Hardening "Vibe Coded" apps against vulnerabilities using experience from RedHat and GE Digital</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-white/5 border border-white/5">
+                            <h4 class="font-bold mb-2 text-red-400">Performance Monitoring (Office)</h4>
+                            <p class="text-sm text-slate-400">Tracking token costs, latency, and model accuracy in production</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-white/5 border border-white/5">
+                            <h4 class="font-bold mb-2 text-red-400">Team Collaboration (Office)</h4>
+                            <p class="text-sm text-slate-400">AI-assisted code reviews and PR automation for cross-functional teams</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Week 8 -->
+                <div class="mb-8 p-8 rounded-2xl bg-slate-900/40 border border-white/5">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-12 h-12 bg-indigo-600 rounded-xl flex items-center justify-center">
+                            <span class="text-2xl font-black">8</span>
+                        </div>
+                        <h3 class="text-2xl font-bold">Week 8: Graduation & Ecosystem Launch</h3>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="p-4 rounded-xl bg-white/5 border border-white/5">
+                            <h4 class="font-bold mb-2 text-indigo-400">Portfolio Showcase (Office)</h4>
+                            <p class="text-sm text-slate-400">Presentation of the "Nordic Global Trade" App to project leads</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-white/5 border border-white/5">
+                            <h4 class="font-bold mb-2 text-indigo-400">Certification Ceremony (Office)</h4>
+                            <p class="text-sm text-slate-400">Awarding of digital badges and university-grade credentials</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-white/5 border border-white/5">
+                            <h4 class="font-bold mb-2 text-indigo-400">Strategic Roadmap (Craig)</h4>
+                            <p class="text-sm text-slate-400">Aligning technology investments with business objectives to reduce time-to-market</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Instructors -->
+            <div class="mb-16">
+                <h2 class="text-3xl md:text-4xl font-black mb-12 text-center">Meet Your Lead Instructors</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="p-8 rounded-2xl bg-slate-900/40 border border-white/5">
+                        <div class="w-16 h-16 bg-indigo-600 rounded-2xl flex items-center justify-center mb-6">
+                            <i data-lucide="user" class="w-8 h-8 text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2">Josef</h3>
+                        <p class="text-slate-400 mb-4">AI Ecosystem & Ideation Lead</p>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            Specialist in rapid prototyping and AI-driven product strategy. Leads the "Vibe Coding" revolution, teaching students how to move from thought to interface in record time.
+                        </p>
+                    </div>
+                    <div class="p-8 rounded-2xl bg-slate-900/40 border border-white/5">
+                        <div class="w-16 h-16 bg-cyan-600 rounded-2xl flex items-center justify-center mb-6">
+                            <i data-lucide="user" class="w-8 h-8 text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2">Craig Martin</h3>
+                        <p class="text-slate-400 mb-4">Principal DevSecOps & Strategy Lead</p>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            Results-driven Engineering Leader with proven track record at RedHat, GE Digital, Intel, and Verizon. Brings futuristic vision and hands-on expertise in securing and optimizing software lifecycles.
+                        </p>
+                    </div>
+                    <div class="p-8 rounded-2xl bg-slate-900/40 border border-white/5">
+                        <div class="w-16 h-16 bg-emerald-600 rounded-2xl flex items-center justify-center mb-6">
+                            <i data-lucide="user" class="w-8 h-8 text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2">Lee</h3>
+                        <p class="text-slate-400 mb-4">Technical Architecture & Cortex Integration Lead</p>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            Expert in database schema design and complex AI integrations. Focuses on "Office" hours and hands-on TDD workflows, ensuring every AI-generated line of code is functional, testable, and robust.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonial -->
+            <div class="p-8 md:p-12 rounded-3xl bg-gradient-to-br from-indigo-900/30 via-slate-900 to-slate-950 border border-indigo-500/20 mb-16">
+                <div class="text-center mb-8">
+                    <i data-lucide="quote" class="w-12 h-12 text-indigo-400 mx-auto mb-4"></i>
+                    <p class="text-xl md:text-2xl text-slate-300 italic leading-relaxed mb-6">
+                        "The course was incredibly informative and well-structured. I gained practical skills that immediately applied in my work, making it a highly valuable learning experience. Using Gemini for planning and Cursor for 'vibe coding' completely changed how I think about software."
+                    </p>
+                    <div class="flex items-center justify-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-indigo-500/20 border border-indigo-500/20 flex items-center justify-center text-indigo-400 font-bold text-xl">
+                            E
+                        </div>
+                        <div class="text-left">
+                            <div class="font-black text-white">Eman Nisar</div>
+                            <div class="text-sm text-slate-500">Data Scientist & ML Engineer</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="text-center">
+                <a href="shop.html" class="inline-block px-12 py-6 bg-indigo-600 hover:bg-indigo-500 text-white rounded-2xl font-black text-xl hover:scale-105 transition-all shadow-2xl shadow-indigo-600/40">
+                    Enroll Now - $997
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 pt-16 pb-8 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <div class="flex items-center justify-center gap-3 mb-8">
+                <div class="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center">
+                    <i data-lucide="zap" class="text-white w-6 h-6 fill-white"></i>
+                </div>
+                <span class="text-2xl font-black tracking-tight">NEXUS ACADEMY</span>
+            </div>
+            <p class="text-slate-500 text-sm">© 2024 Nexus Academy International. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+    <script src="../cart.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
