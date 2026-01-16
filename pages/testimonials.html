@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Testimonials - Nexus Academy">
+    <title>Testimonials - Nexus Academy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 font-sans">
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-transparent py-5">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <a href="../index.html" class="flex items-center gap-2">
+                    <div class="w-10 h-10 bg-gradient-to-tr from-indigo-600 to-cyan-400 rounded-xl flex items-center justify-center shadow-lg shadow-indigo-500/20">
+                        <i data-lucide="zap" class="text-white fill-white w-6 h-6"></i>
+                    </div>
+                    <span class="text-xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-400">
+                        NEXUS ACADEMY
+                    </span>
+                </a>
+            </div>
+
+            <!-- Desktop Nav -->
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-400">
+                <a href="../index.html" class="hover:text-white transition-colors">Home</a>
+                <a href="courses.html" class="hover:text-white transition-colors">Courses</a>
+                <a href="shop.html" class="hover:text-white transition-colors">Shop</a>
+                <a href="flagship.html" class="hover:text-white transition-colors">Flagship</a>
+                <a href="community.html" class="hover:text-white transition-colors">Community</a>
+                <a href="testimonials.html" class="text-white font-semibold">Testimonials</a>
+                <a href="cart.html" class="relative hover:text-white transition-colors">
+                    <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+                    <span id="cartCount" class="absolute -top-2 -right-2 bg-indigo-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center hidden">0</span>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button id="menuToggle" class="md:hidden text-slate-300 hover:text-white">
+                <i data-lucide="menu" class="w-7 h-7"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden absolute top-full left-0 w-full bg-slate-900 border-b border-white/10 p-6 flex flex-col gap-4">
+            <a href="../index.html" class="text-lg py-2 mobile-nav-link">Home</a>
+            <a href="courses.html" class="text-lg py-2 mobile-nav-link">Courses</a>
+            <a href="shop.html" class="text-lg py-2 mobile-nav-link">Shop</a>
+            <a href="flagship.html" class="text-lg py-2 mobile-nav-link">Flagship</a>
+            <a href="community.html" class="text-lg py-2 mobile-nav-link">Community</a>
+            <a href="testimonials.html" class="text-lg py-2 mobile-nav-link">Testimonials</a>
+            <a href="cart.html" class="text-lg py-2 mobile-nav-link flex items-center gap-2">
+                <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+                Cart (<span id="mobileCartCount">0</span>)
+            </a>
+        </div>
+    </nav>
+
+    <!-- Testimonials Section -->
+    <section class="pt-32 pb-32 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20">
+                <h1 class="text-4xl font-bold mb-4 italic">"Transformational."</h1>
+                <p class="text-slate-500 uppercase tracking-[0.3em] text-xs font-black">Success Stories from the Nexus</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <div class="p-12 rounded-[2.5rem] bg-white/5 border border-white/10 hover:bg-white/[0.07] transition-all relative group">
+                    <div class="absolute -left-2 top-1/2 -translate-y-1/2 w-1 h-20 bg-indigo-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <p class="text-xl text-slate-300 leading-relaxed italic mb-10 font-light">
+                        "I went from zero technical knowledge to launching my first AI-powered SaaS in 6 weeks. The Software Engineering without Code module is worth 10x the price of the entire academy."
+                    </p>
+                    <div class="flex items-center gap-5">
+                        <div class="w-14 h-14 rounded-2xl bg-indigo-500/20 border border-indigo-500/20 flex items-center justify-center text-indigo-400 font-bold text-xl">
+                            J
+                        </div>
+                        <div>
+                            <div class="font-black text-white tracking-wide">James Arther</div>
+                            <div class="text-xs text-slate-500 uppercase font-bold tracking-widest">SaaS Founder, London</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-12 rounded-[2.5rem] bg-white/5 border border-white/10 hover:bg-white/[0.07] transition-all relative group">
+                    <div class="absolute -left-2 top-1/2 -translate-y-1/2 w-1 h-20 bg-cyan-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <p class="text-xl text-slate-300 leading-relaxed italic mb-10 font-light">
+                        "The affiliate marketing strategies here are fresh. Everyone else is doing the same thing, but Nexus teaches you how to use AI to find niche opportunities that actually convert."
+                    </p>
+                    <div class="flex items-center gap-5">
+                        <div class="w-14 h-14 rounded-2xl bg-cyan-500/20 border border-cyan-500/20 flex items-center justify-center text-cyan-400 font-bold text-xl">
+                            S
+                        </div>
+                        <div>
+                            <div class="font-black text-white tracking-wide">Sarah Chen</div>
+                            <div class="text-xs text-slate-500 uppercase font-bold tracking-widest">Digital Marketer, Singapore</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 pt-16 pb-8 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <div class="flex items-center justify-center gap-3 mb-8">
+                <div class="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center">
+                    <i data-lucide="zap" class="text-white w-6 h-6 fill-white"></i>
+                </div>
+                <span class="text-2xl font-black tracking-tight">NEXUS ACADEMY</span>
+            </div>
+            <p class="text-slate-500 text-sm">© 2024 Nexus Academy International. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+    <script src="../cart.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

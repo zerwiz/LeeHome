@@ -1,5 +1,7 @@
 # Netlify configuration file
 [build]
+  # Install dependencies for Netlify Functions
+  command = "npm install"
   # No build command needed for static HTML
   publish = "."
 

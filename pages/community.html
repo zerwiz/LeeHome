@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Community - Nexus Academy">
+    <title>Community - Nexus Academy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 font-sans">
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-transparent py-5">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <a href="../index.html" class="flex items-center gap-2">
+                    <div class="w-10 h-10 bg-gradient-to-tr from-indigo-600 to-cyan-400 rounded-xl flex items-center justify-center shadow-lg shadow-indigo-500/20">
+                        <i data-lucide="zap" class="text-white fill-white w-6 h-6"></i>
+                    </div>
+                    <span class="text-xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-400">
+                        NEXUS ACADEMY
+                    </span>
+                </a>
+            </div>
+
+            <!-- Desktop Nav -->
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-400">
+                <a href="../index.html" class="hover:text-white transition-colors">Home</a>
+                <a href="courses.html" class="hover:text-white transition-colors">Courses</a>
+                <a href="../shop.html" class="hover:text-white transition-colors">Shop</a>
+                <a href="flagship.html" class="hover:text-white transition-colors">Flagship</a>
+                <a href="community.html" class="text-white font-semibold">Community</a>
+                <a href="testimonials.html" class="hover:text-white transition-colors">Testimonials</a>
+                <a href="../cart.html" class="relative hover:text-white transition-colors">
+                    <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+                    <span id="cartCount" class="absolute -top-2 -right-2 bg-indigo-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center hidden">0</span>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button id="menuToggle" class="md:hidden text-slate-300 hover:text-white">
+                <i data-lucide="menu" class="w-7 h-7"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden absolute top-full left-0 w-full bg-slate-900 border-b border-white/10 p-6 flex flex-col gap-4">
+            <a href="../index.html" class="text-lg py-2 mobile-nav-link">Home</a>
+            <a href="courses.html" class="text-lg py-2 mobile-nav-link">Courses</a>
+            <a href="../shop.html" class="text-lg py-2 mobile-nav-link">Shop</a>
+            <a href="flagship.html" class="text-lg py-2 mobile-nav-link">Flagship</a>
+            <a href="community.html" class="text-lg py-2 mobile-nav-link">Community</a>
+            <a href="testimonials.html" class="text-lg py-2 mobile-nav-link">Testimonials</a>
+            <a href="../cart.html" class="text-lg py-2 mobile-nav-link flex items-center gap-2">
+                <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+                Cart (<span id="mobileCartCount">0</span>)
+            </a>
+        </div>
+    </nav>
+
+    <!-- Community Section -->
+    <section class="pt-32 pb-32 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20">
+                <h1 class="text-4xl md:text-6xl font-black mb-6">More Than Just <span class="text-indigo-500">Video Lessons</span></h1>
+                <p class="text-slate-400 text-lg max-w-2xl mx-auto">
+                    Learning alone is slow. Join the Nexus Ecosystem and build alongside the world's most ambitious AI entrepreneurs.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                <!-- Discord Card -->
+                <div class="p-12 rounded-[3rem] bg-indigo-600/10 border border-indigo-500/20 relative group overflow-hidden">
+                    <div class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
+                        <i data-lucide="message-square" class="w-40 h-40 rotate-12"></i>
+                    </div>
+                    <div class="relative z-10">
+                        <div class="w-16 h-16 bg-indigo-600 rounded-2xl flex items-center justify-center mb-8 shadow-xl shadow-indigo-600/30">
+                            <i data-lucide="users" class="text-white w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-3xl font-bold mb-4">24/7 Discord Community</h3>
+                        <p class="text-slate-300 mb-8 leading-relaxed max-w-md">
+                            Get instant feedback on your projects, collaborate on new ventures, and stay updated with daily AI breakthroughs in our private members-only server.
+                        </p>
+                        <ul class="space-y-4 mb-10">
+                            <li class="flex items-center gap-3 text-sm font-semibold text-indigo-300 uppercase tracking-wider">
+                                <i data-lucide="check-circle" class="w-4 h-4"></i>
+                                Exclusive Alpha Channels
+                            </li>
+                            <li class="flex items-center gap-3 text-sm font-semibold text-indigo-300 uppercase tracking-wider">
+                                <i data-lucide="check-circle" class="w-4 h-4"></i>
+                                Networking with Top 1%
+                            </li>
+                        </ul>
+                        <button onclick="joinDiscord()" class="px-8 py-4 bg-indigo-600 hover:bg-indigo-500 text-white rounded-2xl font-bold transition-all flex items-center gap-3">
+                            Join the Discord
+                            <i data-lucide="arrow-right" class="w-4.5 h-4.5"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Zoom Card -->
+                <div class="p-12 rounded-[3rem] bg-cyan-600/10 border border-cyan-500/20 relative group overflow-hidden">
+                    <div class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
+                        <i data-lucide="video" class="w-40 h-40 -rotate-12"></i>
+                    </div>
+                    <div class="relative z-10">
+                        <div class="w-16 h-16 bg-cyan-600 rounded-2xl flex items-center justify-center mb-8 shadow-xl shadow-cyan-600/30">
+                            <i data-lucide="video" class="text-white w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-3xl font-bold mb-4">Weekly Zoom Masterclasses</h3>
+                        <p class="text-slate-300 mb-8 leading-relaxed max-w-md">
+                            Every Tuesday and Thursday, we go live. Over-the-shoulder builds, Q&A sessions, and deep-dives into the latest AI tools and marketing strategies.
+                        </p>
+                        <div class="p-6 bg-black/40 border border-white/5 rounded-2xl mb-10">
+                            <div class="flex items-center gap-4 text-cyan-400 font-bold mb-2">
+                                <i data-lucide="calendar" class="w-4.5 h-4.5"></i>
+                                Next Live Session
+                            </div>
+                            <div class="text-white font-black text-xl">Tuesday @ 10:00 AM EST</div>
+                            <div class="text-slate-500 text-sm italic">Topic: Automating Affiliate Funnels with AI</div>
+                        </div>
+                        <button onclick="addToCalendar()" class="px-8 py-4 bg-cyan-600 hover:bg-cyan-500 text-white rounded-2xl font-bold transition-all flex items-center gap-3">
+                            Add to Calendar
+                            <i data-lucide="arrow-right" class="w-4.5 h-4.5"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 pt-16 pb-8 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <div class="flex items-center justify-center gap-3 mb-8">
+                <div class="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center">
+                    <i data-lucide="zap" class="text-white w-6 h-6 fill-white"></i>
+                </div>
+                <span class="text-2xl font-black tracking-tight">NEXUS ACADEMY</span>
+            </div>
+            <p class="text-slate-500 text-sm">© 2024 Nexus Academy International. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+    <script src="../cart.js"></script>
+    <script>
+        function joinDiscord() {
+            // Replace with your actual Discord invite link
+            const discordLink = 'https://discord.gg/your-invite-code';
+            window.open(discordLink, '_blank');
+        }
+
+        function addToCalendar() {
+            // Create calendar event
+            const event = {
+                title: 'Nexus Academy - Weekly Zoom Masterclass',
+                description: 'Over-the-shoulder builds, Q&A sessions, and deep-dives into the latest AI tools and marketing strategies.',
+                location: 'Zoom',
+                startDate: new Date('2024-01-16T10:00:00-05:00'), // Tuesday @ 10:00 AM EST
+                endDate: new Date('2024-01-16T11:30:00-05:00'),
+            };
+
+            // Google Calendar link
+            const googleCalendarLink = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(event.title)}&dates=${event.startDate.toISOString().replace(/[-:]/g, '').split('.')[0]}Z/${event.endDate.toISOString().replace(/[-:]/g, '').split('.')[0]}Z&details=${encodeURIComponent(event.description)}&location=${encodeURIComponent(event.location)}`;
+            
+            window.open(googleCalendarLink, '_blank');
+        }
+
+        lucide.createIcons();
+    </script>
+</body>
+</html>

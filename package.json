@@ -1,0 +1,19 @@
+{
+  "name": "nexus-academy",
+  "version": "1.0.0",
+  "description": "Nexus Academy - E-commerce site with Stripe integration",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "stripe": "^14.0.0"
+  },
+  "keywords": [
+    "education",
+    "ecommerce",
+    "stripe"
+  ],
+  "author": "",
+  "license": "ISC"
+}

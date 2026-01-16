@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Payment Successful - Nexus Academy">
+    <title>Payment Successful - Nexus Academy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 font-sans">
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-transparent py-5">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <a href="../index.html" class="flex items-center gap-2">
+                    <div class="w-10 h-10 bg-gradient-to-tr from-indigo-600 to-cyan-400 rounded-xl flex items-center justify-center shadow-lg shadow-indigo-500/20">
+                        <i data-lucide="zap" class="text-white fill-white w-6 h-6"></i>
+                    </div>
+                    <span class="text-xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-400">
+                        NEXUS ACADEMY
+                    </span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Success Section -->
+    <section class="pt-40 pb-16 min-h-screen flex items-center justify-center">
+        <div class="max-w-2xl mx-auto px-6 text-center">
+            <div class="mb-8">
+                <div class="w-24 h-24 bg-emerald-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i data-lucide="check-circle" class="w-16 h-16 text-emerald-400"></i>
+                </div>
+                <h1 class="text-5xl md:text-7xl font-black mb-6">
+                    Payment <span class="text-emerald-400">Successful!</span>
+                </h1>
+                <p class="text-xl text-slate-400 mb-8">
+                    Thank you for your purchase. You will receive a confirmation email shortly with access to your courses.
+                </p>
+            </div>
+
+            <div class="p-8 rounded-3xl bg-slate-900/40 border border-white/5 mb-8 text-left">
+                <h2 class="text-2xl font-bold mb-4 flex items-center gap-3">
+                    <i data-lucide="mail" class="w-6 h-6 text-indigo-400"></i>
+                    What's Next?
+                </h2>
+                <ul class="space-y-3 text-slate-300">
+                    <li class="flex items-start gap-3">
+                        <i data-lucide="check" class="w-5 h-5 text-emerald-400 mt-0.5"></i>
+                        <span>Check your email for course access instructions</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i data-lucide="check" class="w-5 h-5 text-emerald-400 mt-0.5"></i>
+                        <span>Join our Discord community to connect with other students</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i data-lucide="check" class="w-5 h-5 text-emerald-400 mt-0.5"></i>
+                        <span>Attend weekly Zoom masterclasses for live support</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="../index.html" class="px-8 py-4 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl font-bold transition-all flex items-center justify-center gap-2">
+                    <i data-lucide="home" class="w-5 h-5"></i>
+                    Return Home
+                </a>
+                <a href="shop.html" class="px-8 py-4 bg-white/5 hover:bg-white/10 text-white border border-white/10 rounded-xl font-bold transition-all flex items-center justify-center gap-2">
+                    <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+                    Browse More Courses
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script src="../script.js"></script>
+    <script src="../cart.js"></script>
+    <script>
+        // Clear cart on successful payment
+        if (typeof Cart !== 'undefined') {
+            Cart.clearCart();
+        }
+
+        // Get session ID from URL if present
+        const urlParams = new URLSearchParams(window.location.search);
+        const sessionId = urlParams.get('session_id');
+        if (sessionId) {
+            console.log('Payment session ID:', sessionId);
+            // You can verify the payment here if needed
+        }
+    </script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

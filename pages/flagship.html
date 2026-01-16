@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Flagship Program - Nexus Academy">
+    <title>Flagship Program - Nexus Academy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 font-sans">
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-transparent py-5">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <a href="../index.html" class="flex items-center gap-2">
+                    <div class="w-10 h-10 bg-gradient-to-tr from-indigo-600 to-cyan-400 rounded-xl flex items-center justify-center shadow-lg shadow-indigo-500/20">
+                        <i data-lucide="zap" class="text-white fill-white w-6 h-6"></i>
+                    </div>
+                    <span class="text-xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-400">
+                        NEXUS ACADEMY
+                    </span>
+                </a>
+            </div>
+
+            <!-- Desktop Nav -->
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-400">
+                <a href="../index.html" class="hover:text-white transition-colors">Home</a>
+                <a href="courses.html" class="hover:text-white transition-colors">Courses</a>
+                <a href="../shop.html" class="hover:text-white transition-colors">Shop</a>
+                <a href="flagship.html" class="text-white font-semibold">Flagship</a>
+                <a href="community.html" class="hover:text-white transition-colors">Community</a>
+                <a href="testimonials.html" class="hover:text-white transition-colors">Testimonials</a>
+                <a href="../cart.html" class="relative hover:text-white transition-colors">
+                    <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+                    <span id="cartCount" class="absolute -top-2 -right-2 bg-indigo-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center hidden">0</span>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button id="menuToggle" class="md:hidden text-slate-300 hover:text-white">
+                <i data-lucide="menu" class="w-7 h-7"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden absolute top-full left-0 w-full bg-slate-900 border-b border-white/10 p-6 flex flex-col gap-4">
+            <a href="../index.html" class="text-lg py-2 mobile-nav-link">Home</a>
+            <a href="courses.html" class="text-lg py-2 mobile-nav-link">Courses</a>
+            <a href="../shop.html" class="text-lg py-2 mobile-nav-link">Shop</a>
+            <a href="flagship.html" class="text-lg py-2 mobile-nav-link">Flagship</a>
+            <a href="community.html" class="text-lg py-2 mobile-nav-link">Community</a>
+            <a href="testimonials.html" class="text-lg py-2 mobile-nav-link">Testimonials</a>
+            <a href="../cart.html" class="text-lg py-2 mobile-nav-link flex items-center gap-2">
+                <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+                Cart (<span id="mobileCartCount">0</span>)
+            </a>
+        </div>
+    </nav>
+
+    <!-- Flagship Course -->
+    <section class="pt-32 pb-32 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="relative rounded-[3rem] bg-gradient-to-br from-indigo-900/30 via-slate-900 to-slate-950 border border-indigo-500/20 p-8 md:p-20 overflow-hidden shadow-2xl">
+                <div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image: url('https://www.transparenttextures.com/patterns/carbon-fibre.png');"></div>
+                <div class="absolute -bottom-24 -left-24 w-[500px] h-[500px] bg-indigo-600/20 rounded-full blur-[120px]"></div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
+                    <div>
+                        <div class="inline-flex items-center gap-3 px-4 py-2 rounded-xl bg-amber-500/10 text-amber-400 text-xs font-black uppercase tracking-widest mb-8 border border-amber-500/20">
+                            <i data-lucide="star" class="w-3.5 h-3.5 fill-amber-400"></i>
+                            Professional Certification
+                        </div>
+                        <h1 class="text-5xl md:text-6xl font-black mb-8 leading-[1.1]">
+                            Build Your Vision <br />
+                            <span class="text-indigo-400">Powered by AI</span>
+                        </h1>
+                        <p class="text-slate-300 text-xl mb-10 leading-relaxed">
+                            The ultimate curriculum for the "One-Person Tech Titan." Learn to design, develop, and deploy full-scale software solutions using advanced AI models—no traditional coding experience required.
+                        </p>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-12">
+                            <div class="flex items-center gap-4 bg-white/5 p-4 rounded-2xl border border-white/5">
+                                <div class="w-10 h-10 rounded-xl bg-indigo-500/20 flex items-center justify-center">
+                                    <i data-lucide="check-circle" class="w-5 h-5 text-indigo-400"></i>
+                                </div>
+                                <span class="text-slate-200 font-bold text-sm uppercase tracking-wider">No-Code App Architecture</span>
+                            </div>
+                            <div class="flex items-center gap-4 bg-white/5 p-4 rounded-2xl border border-white/5">
+                                <div class="w-10 h-10 rounded-xl bg-indigo-500/20 flex items-center justify-center">
+                                    <i data-lucide="check-circle" class="w-5 h-5 text-indigo-400"></i>
+                                </div>
+                                <span class="text-slate-200 font-bold text-sm uppercase tracking-wider">Custom AI Agents</span>
+                            </div>
+                            <div class="flex items-center gap-4 bg-white/5 p-4 rounded-2xl border border-white/5">
+                                <div class="w-10 h-10 rounded-xl bg-indigo-500/20 flex items-center justify-center">
+                                    <i data-lucide="check-circle" class="w-5 h-5 text-indigo-400"></i>
+                                </div>
+                                <span class="text-slate-200 font-bold text-sm uppercase tracking-wider">Cloud Deployment</span>
+                            </div>
+                            <div class="flex items-center gap-4 bg-white/5 p-4 rounded-2xl border border-white/5">
+                                <div class="w-10 h-10 rounded-xl bg-indigo-500/20 flex items-center justify-center">
+                                    <i data-lucide="check-circle" class="w-5 h-5 text-indigo-400"></i>
+                                </div>
+                                <span class="text-slate-200 font-bold text-sm uppercase tracking-wider">API Monetization</span>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col sm:flex-row items-center gap-6">
+                            <a href="shop.html" class="w-full sm:w-auto px-12 py-6 bg-white text-slate-950 rounded-2xl font-black text-xl hover:scale-105 transition-all shadow-2xl shadow-white/10 text-center">
+                                Apply for Next Cohort
+                            </a>
+                            <div class="flex -space-x-3">
+                                <div class="w-10 h-10 rounded-full border-2 border-slate-900 bg-slate-800 flex items-center justify-center">
+                                    <i data-lucide="users" class="w-3.5 h-3.5"></i>
+                                </div>
+                                <div class="w-10 h-10 rounded-full border-2 border-slate-900 bg-slate-800 flex items-center justify-center">
+                                    <i data-lucide="users" class="w-3.5 h-3.5"></i>
+                                </div>
+                                <div class="w-10 h-10 rounded-full border-2 border-slate-900 bg-slate-800 flex items-center justify-center">
+                                    <i data-lucide="users" class="w-3.5 h-3.5"></i>
+                                </div>
+                                <div class="w-10 h-10 rounded-full border-2 border-slate-900 bg-slate-800 flex items-center justify-center text-[10px] font-bold">
+                                    +4k
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="relative group">
+                        <div class="absolute inset-0 bg-indigo-500/20 rounded-[2.5rem] blur-3xl group-hover:bg-indigo-500/30 transition-all"></div>
+                        <div class="relative aspect-[4/5] md:aspect-square rounded-[2.5rem] bg-slate-900 border border-white/10 shadow-2xl overflow-hidden p-8 flex flex-col justify-center">
+                            <div class="space-y-6">
+                                <div class="flex items-center justify-between">
+                                    <div class="flex gap-2">
+                                        <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                                        <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                                        <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                                    </div>
+                                    <div class="text-[10px] font-mono text-slate-600 uppercase tracking-widest">nexus-engine.sys</div>
+                                </div>
+                                <div class="p-6 rounded-2xl bg-black/40 border border-white/5 font-mono text-sm space-y-3">
+                                    <div class="text-indigo-400">const <span class="text-cyan-300">app</span> = <span class="text-white">new</span> <span class="text-emerald-400">AIGenerator</span>();</div>
+                                    <div class="text-indigo-400">app.<span class="text-pink-400">build</span>(<span class="text-amber-200">"SaaS Finance Platform"</span>);</div>
+                                    <div class="text-emerald-500 ml-4 font-bold">Generated 48 frontend components.</div>
+                                </div>
+                                <div class="h-32 rounded-2xl bg-gradient-to-tr from-indigo-500 to-cyan-400 opacity-20 flex items-center justify-center group-hover:opacity-40 transition-opacity">
+                                    <i data-lucide="layout" class="w-12 h-12 text-white animate-bounce"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 pt-16 pb-8 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <div class="flex items-center justify-center gap-3 mb-8">
+                <div class="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center">
+                    <i data-lucide="zap" class="text-white w-6 h-6 fill-white"></i>
+                </div>
+                <span class="text-2xl font-black tracking-tight">NEXUS ACADEMY</span>
+            </div>
+            <p class="text-slate-500 text-sm">© 2024 Nexus Academy International. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+    <script src="../cart.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Checkout - Nexus Academy">
+    <title>Checkout - Nexus Academy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://js.stripe.com/v3/"></script>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 font-sans">
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-transparent py-5">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <a href="../index.html" class="flex items-center gap-2">
+                    <div class="w-10 h-10 bg-gradient-to-tr from-indigo-600 to-cyan-400 rounded-xl flex items-center justify-center shadow-lg shadow-indigo-500/20">
+                        <i data-lucide="zap" class="text-white fill-white w-6 h-6"></i>
+                    </div>
+                    <span class="text-xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-400">
+                        NEXUS ACADEMY
+                    </span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Checkout Section -->
+    <section class="pt-32 pb-16 min-h-screen">
+        <div class="max-w-6xl mx-auto px-6">
+            <h1 class="text-4xl md:text-6xl font-black mb-12">
+                Checkout
+            </h1>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Checkout Form -->
+                <div class="lg:col-span-2">
+                    <div class="p-8 rounded-3xl bg-slate-900/40 border border-white/5 mb-6">
+                        <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
+                            <i data-lucide="user" class="w-6 h-6 text-indigo-400"></i>
+                            Contact Information
+                        </h2>
+                        <form id="checkoutForm" class="space-y-6">
+                            <div>
+                                <label class="block text-sm font-semibold text-slate-400 mb-2">Email</label>
+                                <input type="email" id="email" required class="w-full px-4 py-3 rounded-xl bg-slate-800 border border-white/10 text-white focus:outline-none focus:border-indigo-500 transition-all" placeholder="your@email.com">
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-sm font-semibold text-slate-400 mb-2">First Name</label>
+                                    <input type="text" id="firstName" required class="w-full px-4 py-3 rounded-xl bg-slate-800 border border-white/10 text-white focus:outline-none focus:border-indigo-500 transition-all" placeholder="John">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-semibold text-slate-400 mb-2">Last Name</label>
+                                    <input type="text" id="lastName" required class="w-full px-4 py-3 rounded-xl bg-slate-800 border border-white/10 text-white focus:outline-none focus:border-indigo-500 transition-all" placeholder="Doe">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="p-8 rounded-3xl bg-slate-900/40 border border-white/5">
+                        <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
+                            <i data-lucide="credit-card" class="w-6 h-6 text-indigo-400"></i>
+                            Payment Information
+                        </h2>
+                        <div id="cardElement" class="mb-6">
+                            <!-- Stripe Elements will be inserted here -->
+                        </div>
+                        <div id="cardErrors" class="text-red-400 text-sm mb-4 hidden"></div>
+                    </div>
+                </div>
+
+                <!-- Order Summary -->
+                <div class="lg:col-span-1">
+                    <div class="sticky top-32 p-8 rounded-3xl bg-slate-900/40 border border-white/5">
+                        <h2 class="text-2xl font-bold mb-6">Order Summary</h2>
+                        <div id="orderItems" class="space-y-4 mb-6">
+                            <!-- Order items will be loaded here -->
+                        </div>
+                        <div class="border-t border-white/10 pt-6 space-y-4">
+                            <div class="flex justify-between text-slate-400">
+                                <span>Subtotal</span>
+                                <span id="orderSubtotal">$0</span>
+                            </div>
+                            <div class="flex justify-between text-slate-400">
+                                <span>Tax</span>
+                                <span id="orderTax">$0</span>
+                            </div>
+                            <div class="flex justify-between text-xl font-bold pt-4 border-t border-white/10">
+                                <span>Total</span>
+                                <span id="orderTotal" class="text-indigo-400">$0</span>
+                            </div>
+                        </div>
+                        <button id="payButton" onclick="handlePayment()" class="w-full mt-8 px-8 py-6 bg-indigo-600 hover:bg-indigo-500 text-white rounded-2xl font-black text-xl transition-all shadow-2xl shadow-indigo-600/40 flex items-center justify-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed">
+                            <i data-lucide="lock" class="w-5 h-5"></i>
+                            Pay Now
+                        </button>
+                        <p class="text-xs text-slate-500 text-center mt-4">
+                            <i data-lucide="shield-check" class="w-3 h-3 inline"></i>
+                            Secure payment powered by Stripe
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 pt-16 pb-8 border-t border-white/5 mt-32">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <div class="flex items-center justify-center gap-3 mb-8">
+                <div class="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center">
+                    <i data-lucide="zap" class="text-white w-6 h-6 fill-white"></i>
+                </div>
+                <span class="text-2xl font-black tracking-tight">NEXUS ACADEMY</span>
+            </div>
+            <p class="text-slate-500 text-sm">© 2024 Nexus Academy International. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+    <script src="../cart.js"></script>
+    <script>
+        let stripe, elements, cardElement;
+
+        // Initialize Stripe (use your publishable key)
+        // In production, this should come from environment variables
+        const STRIPE_PUBLISHABLE_KEY = 'pk_test_51...'; // Replace with your Stripe publishable key
+
+        function initializeStripe() {
+            // Check if cart is empty
+            const cart = Cart.getCart();
+            if (cart.length === 0) {
+                window.location.href = 'cart.html';
+                return;
+            }
+
+            // Initialize Stripe (only if key is set)
+            if (STRIPE_PUBLISHABLE_KEY && STRIPE_PUBLISHABLE_KEY !== 'pk_test_51...') {
+                stripe = Stripe(STRIPE_PUBLISHABLE_KEY);
+                elements = stripe.elements();
+                
+                const style = {
+                    base: {
+                        color: '#ffffff',
+                        fontFamily: 'Inter, system-ui, sans-serif',
+                        fontSize: '16px',
+                        '::placeholder': {
+                            color: '#64748b',
+                        },
+                    },
+                    invalid: {
+                        color: '#ef4444',
+                    },
+                };
+
+                cardElement = elements.create('card', { style });
+                cardElement.mount('#cardElement');
+
+                cardElement.on('change', ({error}) => {
+                    const displayError = document.getElementById('cardErrors');
+                    if (error) {
+                        displayError.textContent = error.message;
+                        displayError.classList.remove('hidden');
+                    } else {
+                        displayError.classList.add('hidden');
+                    }
+                });
+            } else {
+                // Demo mode - show message
+                document.getElementById('cardElement').innerHTML = `
+                    <div class="p-6 rounded-xl bg-slate-800 border border-white/10 text-center text-slate-400">
+                        <p class="mb-2">Stripe integration requires API keys</p>
+                        <p class="text-xs">Add your Stripe publishable key to checkout.html</p>
+                    </div>
+                `;
+            }
+        }
+
+        function renderOrderSummary() {
+            const cart = Cart.getCart();
+            const orderItems = document.getElementById('orderItems');
+            
+            orderItems.innerHTML = cart.map(item => `
+                <div class="flex justify-between items-center">
+                    <div>
+                        <p class="font-semibold">${item.title}</p>
+                        <p class="text-sm text-slate-500">Qty: ${item.quantity}</p>
+                    </div>
+                    <span class="font-bold">$${(item.price * item.quantity).toFixed(2)}</span>
+                </div>
+            `).join('');
+
+            const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            const tax = subtotal * 0.1;
+            const total = subtotal + tax;
+
+            document.getElementById('orderSubtotal').textContent = `$${subtotal.toFixed(2)}`;
+            document.getElementById('orderTax').textContent = `$${tax.toFixed(2)}`;
+            document.getElementById('orderTotal').textContent = `$${total.toFixed(2)}`;
+        }
+
+        async function handlePayment() {
+            const cart = Cart.getCart();
+            if (cart.length === 0) {
+                alert('Your cart is empty!');
+                return;
+            }
+
+            const email = document.getElementById('email').value;
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+
+            if (!email || !firstName || !lastName) {
+                alert('Please fill in all required fields');
+                return;
+            }
+
+            if (!stripe || !cardElement) {
+                alert('Stripe is not initialized. Please configure your Stripe publishable key.');
+                return;
+            }
+
+            const payButton = document.getElementById('payButton');
+            payButton.disabled = true;
+            payButton.innerHTML = '<i data-lucide="loader" class="w-5 h-5 animate-spin"></i> Processing...';
+            lucide.createIcons();
+
+            try {
+                // Create checkout session via Netlify function
+                const response = await fetch('/.netlify/functions/create-checkout', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        items: cart,
+                        email: email,
+                        name: `${firstName} ${lastName}`,
+                    }),
+                });
+
+                const data = await response.json();
+
+                if (data.error) {
+                    throw new Error(data.error);
+                }
+
+                if (data.sessionId) {
+                    // Redirect to Stripe Checkout
+                    const {error} = await stripe.redirectToCheckout({
+                        sessionId: data.sessionId,
+                    });
+
+                    if (error) {
+                        throw error;
+                    }
+                } else {
+                    throw new Error('No session ID returned');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Payment failed: ' + error.message);
+                payButton.disabled = false;
+                payButton.innerHTML = '<i data-lucide="lock" class="w-5 h-5"></i> Pay Now';
+                lucide.createIcons();
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderOrderSummary();
+            initializeStripe();
+        });
+    </script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

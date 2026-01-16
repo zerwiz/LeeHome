@@ -8,6 +8,7 @@ This is a static website project designed for Netlify hosting. The project uses 
 - `styles.css` - All styling
 - `script.js` - JavaScript functionality
 - `netlify.toml` - Netlify configuration
+- `netlify/functions/` - Serverless functions (for Stripe integration, webhooks, etc.)
 
 ## Coding Standards
 
@@ -51,7 +52,70 @@ This is a static website project designed for Netlify hosting. The project uses 
 - Use efficient selectors
 - Consider lazy loading for images if added later
 
+## Stripe Integration
+
+### Payment Processing Setup
+- Use **Stripe Checkout** for the simplest integration (redirects to Stripe-hosted page)
+- For embedded payments, use **Stripe Elements** with proper security measures
+- Never expose secret keys in client-side code
+- Use **publishable keys** in frontend, **secret keys** only in serverless functions
+
+### Netlify Functions for Stripe
+- Create serverless functions in `netlify/functions/` directory
+- Use Netlify Functions for:
+  - Creating Checkout Sessions
+  - Handling webhooks
+  - Processing payments securely
+- Store Stripe secret keys as Netlify environment variables
+- Access via `process.env.STRIPE_SECRET_KEY` in functions
+
+### Implementation Guidelines
+- **Checkout Flow**: 
+  - Create a function endpoint (e.g., `netlify/functions/create-checkout.js`)
+  - Call from frontend JavaScript to create session
+  - Redirect user to Stripe Checkout URL
+  - Handle success/cancel redirects
+
+- **Webhook Handling**:
+  - Create `netlify/functions/stripe-webhook.js`
+  - Verify webhook signatures using Stripe webhook secret
+  - Handle events: `checkout.session.completed`, `payment_intent.succeeded`, etc.
+  - Update user access or send confirmation emails
+
+- **Security Best Practices**:
+  - Always verify webhook signatures
+  - Use HTTPS for all payment-related requests
+  - Validate amounts and currency on server-side
+  - Never trust client-side data for payment processing
+  - Use Stripe's test mode during development
+
+### Environment Variables
+- Add to Netlify dashboard: Site settings → Environment variables
+- Required variables:
+  - `STRIPE_SECRET_KEY` (for serverless functions)
+  - `STRIPE_PUBLISHABLE_KEY` (for frontend)
+  - `STRIPE_WEBHOOK_SECRET` (for webhook verification)
+- Use `.env` file locally (add to `.gitignore`)
+
+### Example Function Structure
+```javascript
+// netlify/functions/create-checkout.js
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
+
+exports.handler = async (event) => {
+  // Create checkout session
+  // Return session URL
+};
+```
+
+### Frontend Integration
+- Load Stripe.js from CDN: `https://js.stripe.com/v3/`
+- Initialize with publishable key
+- Create checkout sessions via fetch to Netlify function
+- Handle redirects to success/cancel pages
+
 ## Git Workflow
 - Commit messages should be clear and descriptive
 - Keep commits focused on single features/fixes
 - Don't commit build artifacts or sensitive information
+- **NEVER commit** Stripe secret keys, API keys, or `.env` files
