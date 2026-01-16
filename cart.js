@@ -14,6 +14,11 @@ const Cart = {
 
     // Add item to cart
     addItem(product) {
+        if (!product || !product.id) {
+            console.error('Invalid product data:', product);
+            return;
+        }
+        
         const cart = this.getCart();
         const existingItem = cart.find(item => item.id === product.id);
 
@@ -22,9 +27,9 @@ const Cart = {
         } else {
             cart.push({
                 id: product.id,
-                title: product.title,
-                description: product.description,
-                price: product.price,
+                title: product.title || 'Untitled Product',
+                description: product.description || '',
+                price: product.price || 0,
                 quantity: 1
             });
         }

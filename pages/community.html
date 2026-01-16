@@ -31,6 +31,8 @@
                 <a href="../shop.html" class="hover:text-white transition-colors">Shop</a>
                 <a href="flagship.html" class="hover:text-white transition-colors">Flagship</a>
                 <a href="community.html" class="text-white font-semibold">Community</a>
+                <a href="about.html" class="hover:text-white transition-colors">About</a>
+                <a href="contact.html" class="hover:text-white transition-colors">Contact</a>
                 <a href="testimonials.html" class="hover:text-white transition-colors">Testimonials</a>
                 <a href="../cart.html" class="relative hover:text-white transition-colors">
                     <i data-lucide="shopping-cart" class="w-5 h-5"></i>
@@ -51,6 +53,8 @@
             <a href="../shop.html" class="text-lg py-2 mobile-nav-link">Shop</a>
             <a href="flagship.html" class="text-lg py-2 mobile-nav-link">Flagship</a>
             <a href="community.html" class="text-lg py-2 mobile-nav-link">Community</a>
+            <a href="about.html" class="text-lg py-2 mobile-nav-link">About</a>
+            <a href="contact.html" class="text-lg py-2 mobile-nav-link">Contact</a>
             <a href="testimonials.html" class="text-lg py-2 mobile-nav-link">Testimonials</a>
             <a href="../cart.html" class="text-lg py-2 mobile-nav-link flex items-center gap-2">
                 <i data-lucide="shopping-cart" class="w-5 h-5"></i>
@@ -148,25 +152,92 @@
     <script src="../cart.js"></script>
     <script>
         function joinDiscord() {
-            // Replace with your actual Discord invite link
-            const discordLink = 'https://discord.gg/your-invite-code';
+            const discordLink = 'https://discord.gg/UhsYV4aytG';
             window.open(discordLink, '_blank');
         }
 
         function addToCalendar() {
-            // Create calendar event
+            // Create calendar event - Weekly Zoom Masterclass (Tuesdays and Thursdays @ 10:00 AM EST)
             const event = {
                 title: 'Nexus Academy - Weekly Zoom Masterclass',
                 description: 'Over-the-shoulder builds, Q&A sessions, and deep-dives into the latest AI tools and marketing strategies.',
                 location: 'Zoom',
-                startDate: new Date('2024-01-16T10:00:00-05:00'), // Tuesday @ 10:00 AM EST
-                endDate: new Date('2024-01-16T11:30:00-05:00'),
+                // Next Tuesday at 10:00 AM EST
+                startDate: getNextTuesday(),
+                endDate: new Date(getNextTuesday().getTime() + 90 * 60 * 1000) // 90 minutes duration
             };
 
-            // Google Calendar link
-            const googleCalendarLink = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(event.title)}&dates=${event.startDate.toISOString().replace(/[-:]/g, '').split('.')[0]}Z/${event.endDate.toISOString().replace(/[-:]/g, '').split('.')[0]}Z&details=${encodeURIComponent(event.description)}&location=${encodeURIComponent(event.location)}`;
+            // Format dates for .ics file (YYYYMMDDTHHmmssZ)
+            function formatDateForICS(date) {
+                const year = date.getUTCFullYear();
+                const month = String(date.getUTCMonth() + 1).padStart(2, '0');
+                const day = String(date.getUTCDate()).padStart(2, '0');
+                const hours = String(date.getUTCHours()).padStart(2, '0');
+                const minutes = String(date.getUTCMinutes()).padStart(2, '0');
+                const seconds = String(date.getUTCSeconds()).padStart(2, '0');
+                return `${year}${month}${day}T${hours}${minutes}${seconds}Z`;
+            }
+
+            // Generate .ics file content
+            const icsContent = [
+                'BEGIN:VCALENDAR',
+                'VERSION:2.0',
+                'PRODID:-//Nexus Academy//Zoom Masterclass//EN',
+                'CALSCALE:GREGORIAN',
+                'METHOD:PUBLISH',
+                'BEGIN:VEVENT',
+                `UID:nexus-zoom-${Date.now()}@nexusacademy.com`,
+                `DTSTAMP:${formatDateForICS(new Date())}`,
+                `DTSTART:${formatDateForICS(event.startDate)}`,
+                `DTEND:${formatDateForICS(event.endDate)}`,
+                `SUMMARY:${event.title}`,
+                `DESCRIPTION:${event.description.replace(/\n/g, '\\n')}`,
+                `LOCATION:${event.location}`,
+                'STATUS:CONFIRMED',
+                'SEQUENCE:0',
+                'BEGIN:VALARM',
+                'TRIGGER:-PT15M',
+                'ACTION:DISPLAY',
+                'DESCRIPTION:Reminder: Nexus Academy Zoom Masterclass in 15 minutes',
+                'END:VALARM',
+                'END:VEVENT',
+                'END:VCALENDAR'
+            ].join('\r\n');
+
+            // Create and download .ics file
+            const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = 'nexus-academy-zoom-masterclass.ics';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            URL.revokeObjectURL(link.href);
+        }
+
+        // Helper function to get next Tuesday at 10:00 AM EST
+        function getNextTuesday() {
+            const now = new Date();
+            const estOffset = -5 * 60; // EST is UTC-5
+            const estNow = new Date(now.getTime() + (estOffset * 60 * 1000));
             
-            window.open(googleCalendarLink, '_blank');
+            // Get current day of week (0 = Sunday, 2 = Tuesday)
+            let dayOfWeek = estNow.getUTCDay();
+            let daysUntilTuesday = (2 - dayOfWeek + 7) % 7;
+            
+            // If it's already Tuesday and before 10 AM, use today; otherwise use next Tuesday
+            if (dayOfWeek === 2 && estNow.getUTCHours() < 10) {
+                daysUntilTuesday = 0;
+            } else if (daysUntilTuesday === 0) {
+                daysUntilTuesday = 7; // Next Tuesday
+            }
+            
+            const nextTuesday = new Date(estNow);
+            nextTuesday.setUTCDate(estNow.getUTCDate() + daysUntilTuesday);
+            nextTuesday.setUTCHours(10, 0, 0, 0); // 10:00 AM EST
+            
+            // Convert back to UTC
+            return new Date(nextTuesday.getTime() - (estOffset * 60 * 1000));
         }
 
         lucide.createIcons();

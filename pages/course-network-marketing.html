@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Network Marketing Mastery Course - Nexus Academy">
+    <title>Network Marketing Mastery - Nexus Academy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 font-sans">
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-transparent py-5">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <a href="../index.html" class="flex items-center gap-2">
+                    <div class="w-10 h-10 bg-gradient-to-tr from-indigo-600 to-cyan-400 rounded-xl flex items-center justify-center shadow-lg shadow-indigo-500/20">
+                        <i data-lucide="zap" class="text-white fill-white w-6 h-6"></i>
+                    </div>
+                    <span class="text-xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-400">
+                        NEXUS ACADEMY
+                    </span>
+                </a>
+            </div>
+
+            <!-- Desktop Nav -->
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-400">
+                <a href="../index.html" class="hover:text-white transition-colors">Home</a>
+                <a href="courses.html" class="hover:text-white transition-colors">Courses</a>
+                <a href="shop.html" class="hover:text-white transition-colors">Shop</a>
+                <a href="cart.html" class="relative hover:text-white transition-colors">
+                    <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+                    <span id="cartCount" class="absolute -top-2 -right-2 bg-indigo-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center hidden">0</span>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button id="menuToggle" class="md:hidden text-slate-300 hover:text-white">
+                <i data-lucide="menu" class="w-7 h-7"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Course Detail -->
+    <section class="pt-32 pb-16 relative">
+        <div class="max-w-5xl mx-auto px-6">
+            <a href="shop.html" class="inline-flex items-center gap-2 text-slate-400 hover:text-white mb-8 transition-colors">
+                <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                Back to Shop
+            </a>
+
+            <div class="p-10 rounded-3xl bg-slate-900/40 border border-white/5 mb-8">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="text-6xl">🌐</div>
+                    <div>
+                        <span class="inline-block px-3 py-1 rounded-full bg-white/5 text-[10px] uppercase tracking-[0.2em] font-black text-indigo-400 mb-3 border border-white/5">
+                            Network Marketing
+                        </span>
+                        <h1 class="text-4xl md:text-5xl font-black mb-2">Network Marketing Mastery</h1>
+                    </div>
+                </div>
+
+                <p class="text-xl text-slate-300 leading-relaxed mb-8">
+                    Live course hosted by Nexus Academy. Transform into a self-funded entrepreneur and effective network leader. Comprehensive training covering due diligence, asset creation, pitching, scaling, leadership, and resilience.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                    <div class="p-6 rounded-2xl bg-white/5 border border-white/5">
+                        <div class="flex items-center gap-3 mb-4">
+                            <i data-lucide="check-circle" class="w-6 h-6 text-emerald-400"></i>
+                            <h3 class="font-bold text-lg">Due Diligence Protocol</h3>
+                        </div>
+                        <p class="text-slate-400 text-sm">Learn how to thoroughly evaluate network marketing opportunities before committing your time and resources.</p>
+                    </div>
+                    <div class="p-6 rounded-2xl bg-white/5 border border-white/5">
+                        <div class="flex items-center gap-3 mb-4">
+                            <i data-lucide="check-circle" class="w-6 h-6 text-emerald-400"></i>
+                            <h3 class="font-bold text-lg">Name List Categorization</h3>
+                        </div>
+                        <p class="text-slate-400 text-sm">Organize your network into actionable categories for maximum efficiency and conversion.</p>
+                    </div>
+                    <div class="p-6 rounded-2xl bg-white/5 border border-white/5">
+                        <div class="flex items-center gap-3 mb-4">
+                            <i data-lucide="check-circle" class="w-6 h-6 text-emerald-400"></i>
+                            <h3 class="font-bold text-lg">Pitch & Close Mastery</h3>
+                        </div>
+                        <p class="text-slate-400 text-sm">Master the art of presenting opportunities and closing deals with confidence and integrity.</p>
+                    </div>
+                    <div class="p-6 rounded-2xl bg-white/5 border border-white/5">
+                        <div class="flex items-center gap-3 mb-4">
+                            <i data-lucide="check-circle" class="w-6 h-6 text-emerald-400"></i>
+                            <h3 class="font-bold text-lg">Scaling & Duplication</h3>
+                        </div>
+                        <p class="text-slate-400 text-sm">Build systems that allow your team to replicate your success and scale your organization.</p>
+                    </div>
+                    <div class="p-6 rounded-2xl bg-white/5 border border-white/5">
+                        <div class="flex items-center gap-3 mb-4">
+                            <i data-lucide="check-circle" class="w-6 h-6 text-emerald-400"></i>
+                            <h3 class="font-bold text-lg">Leadership Management</h3>
+                        </div>
+                        <p class="text-slate-400 text-sm">Develop leadership skills to mentor and guide your team to success without micromanaging.</p>
+                    </div>
+                    <div class="p-6 rounded-2xl bg-white/5 border border-white/5">
+                        <div class="flex items-center gap-3 mb-4">
+                            <i data-lucide="check-circle" class="w-6 h-6 text-emerald-400"></i>
+                            <h3 class="font-bold text-lg">Crisis Management</h3>
+                        </div>
+                        <p class="text-slate-400 text-sm">Learn how to handle setbacks, company failures, and team challenges with transparency and resilience.</p>
+                    </div>
+                </div>
+
+                <div class="flex items-center justify-between pt-8 border-t border-white/5">
+                    <div class="flex flex-col">
+                        <span class="text-xs text-slate-500 uppercase tracking-wider font-bold">Per Course</span>
+                        <span class="text-4xl font-black text-white">$497</span>
+                    </div>
+                    <button onclick="addToCart('network-marketing-mastery')" class="px-8 py-4 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl font-bold transition-all shadow-lg shadow-indigo-600/20 flex items-center gap-3">
+                        <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="../script.js"></script>
+    <script src="../cart.js"></script>
+    <script>
+        // Product data
+        const product = {
+            id: 'network-marketing-mastery',
+            title: 'Network Marketing Mastery',
+            description: 'Transform into a self-funded entrepreneur and effective network leader. Comprehensive training covering due diligence, asset creation, pitching, scaling, leadership, and resilience.',
+            price: 497
+        };
+
+        function addToCart(productId) {
+            Cart.addItem(product);
+            Cart.updateCartCount();
+            showNotification('Added to cart!');
+        }
+
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.className = 'fixed top-24 right-6 bg-indigo-600 text-white px-6 py-4 rounded-xl shadow-2xl z-50';
+            notification.textContent = message;
+            document.body.appendChild(notification);
+            setTimeout(() => {
+                notification.style.opacity = '0';
+                setTimeout(() => notification.remove(), 300);
+            }, 2000);
+        }
+    </script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

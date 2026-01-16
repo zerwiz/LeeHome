@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Nexus Academy - Get in Touch">
+    <title>Contact Us - Nexus Academy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 font-sans">
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-transparent py-5">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <a href="../index.html" class="flex items-center gap-2">
+                    <div class="w-10 h-10 bg-gradient-to-tr from-indigo-600 to-cyan-400 rounded-xl flex items-center justify-center shadow-lg shadow-indigo-500/20">
+                        <i data-lucide="zap" class="text-white fill-white w-6 h-6"></i>
+                    </div>
+                    <span class="text-xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-400">
+                        NEXUS ACADEMY
+                    </span>
+                </a>
+            </div>
+
+            <!-- Desktop Nav -->
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-400">
+                <a href="../index.html" class="hover:text-white transition-colors">Home</a>
+                <a href="courses.html" class="hover:text-white transition-colors">Courses</a>
+                <a href="shop.html" class="hover:text-white transition-colors">Shop</a>
+                <a href="flagship.html" class="hover:text-white transition-colors">Flagship</a>
+                <a href="community.html" class="hover:text-white transition-colors">Community</a>
+                <a href="about.html" class="hover:text-white transition-colors">About</a>
+                <a href="contact.html" class="text-white font-semibold">Contact</a>
+                <a href="testimonials.html" class="hover:text-white transition-colors">Testimonials</a>
+                <a href="cart.html" class="relative hover:text-white transition-colors">
+                    <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+                    <span id="cartCount" class="absolute -top-2 -right-2 bg-indigo-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center hidden">0</span>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button id="menuToggle" class="md:hidden text-slate-300 hover:text-white">
+                <i data-lucide="menu" class="w-7 h-7"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden absolute top-full left-0 w-full bg-slate-900 border-b border-white/10 p-6 flex flex-col gap-4">
+            <a href="../index.html" class="text-lg py-2 mobile-nav-link">Home</a>
+            <a href="courses.html" class="text-lg py-2 mobile-nav-link">Courses</a>
+            <a href="shop.html" class="text-lg py-2 mobile-nav-link">Shop</a>
+            <a href="flagship.html" class="text-lg py-2 mobile-nav-link">Flagship</a>
+            <a href="community.html" class="text-lg py-2 mobile-nav-link">Community</a>
+            <a href="about.html" class="text-lg py-2 mobile-nav-link">About</a>
+            <a href="contact.html" class="text-lg py-2 mobile-nav-link">Contact</a>
+            <a href="testimonials.html" class="text-lg py-2 mobile-nav-link">Testimonials</a>
+            <a href="cart.html" class="text-lg py-2 mobile-nav-link flex items-center gap-2">
+                <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+                Cart (<span id="mobileCartCount">0</span>)
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-16 relative overflow-hidden">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[600px] bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-indigo-500/15 via-transparent to-transparent pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-16">
+                <h1 class="text-5xl md:text-7xl font-black mb-6">
+                    Get in <span class="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-cyan-400 to-emerald-400">Touch</span>
+                </h1>
+                <p class="text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed">
+                    Have questions? We're here to help. Reach out to us through any of the channels below.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-16 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Contact Form -->
+                <div class="p-10 rounded-3xl bg-slate-900/40 border border-white/5">
+                    <h2 class="text-3xl font-black mb-6">Send us a Message</h2>
+                    <form id="contactForm" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-semibold text-slate-300 mb-2">Name</label>
+                            <input 
+                                type="text" 
+                                id="name" 
+                                name="name" 
+                                required
+                                class="w-full px-4 py-3 bg-slate-800/50 border border-white/10 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500 transition-colors"
+                                placeholder="Your name"
+                            >
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-semibold text-slate-300 mb-2">Email</label>
+                            <input 
+                                type="email" 
+                                id="email" 
+                                name="email" 
+                                required
+                                class="w-full px-4 py-3 bg-slate-800/50 border border-white/10 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500 transition-colors"
+                                placeholder="your.email@example.com"
+                            >
+                        </div>
+                        <div>
+                            <label for="subject" class="block text-sm font-semibold text-slate-300 mb-2">Subject</label>
+                            <select 
+                                id="subject" 
+                                name="subject" 
+                                required
+                                class="w-full px-4 py-3 bg-slate-800/50 border border-white/10 rounded-xl text-white focus:outline-none focus:border-indigo-500 transition-colors"
+                            >
+                                <option value="">Select a topic</option>
+                                <option value="general">General Inquiry</option>
+                                <option value="courses">Course Information</option>
+                                <option value="technical">Technical Support</option>
+                                <option value="billing">Billing Question</option>
+                                <option value="partnership">Partnership Opportunity</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-semibold text-slate-300 mb-2">Message</label>
+                            <textarea 
+                                id="message" 
+                                name="message" 
+                                rows="6" 
+                                required
+                                class="w-full px-4 py-3 bg-slate-800/50 border border-white/10 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500 transition-colors resize-none"
+                                placeholder="Tell us how we can help..."
+                            ></textarea>
+                        </div>
+                        <button 
+                            type="submit" 
+                            class="w-full px-8 py-4 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl font-bold transition-all shadow-lg shadow-indigo-600/20 flex items-center justify-center gap-3"
+                        >
+                            Send Message
+                            <i data-lucide="send" class="w-5 h-5"></i>
+                        </button>
+                        <div id="formMessage" class="hidden text-center text-sm font-semibold"></div>
+                    </form>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="space-y-8">
+                    <div>
+                        <h2 class="text-3xl font-black mb-8">Other Ways to Reach Us</h2>
+                        <div class="space-y-6">
+                            <!-- Discord -->
+                            <div class="p-6 rounded-2xl bg-slate-900/40 border border-white/5 hover:border-indigo-500/30 transition-all">
+                                <div class="flex items-start gap-4">
+                                    <div class="w-12 h-12 bg-indigo-600/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                                        <i data-lucide="message-square" class="w-6 h-6 text-indigo-400"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xl font-bold mb-2">Discord Community</h3>
+                                        <p class="text-slate-400 mb-4">Join our active Discord server for instant support and community interaction.</p>
+                                        <a 
+                                            href="https://discord.gg/UhsYV4aytG" 
+                                            target="_blank"
+                                            class="inline-flex items-center gap-2 text-indigo-400 hover:text-indigo-300 font-semibold transition-colors"
+                                        >
+                                            Join Discord
+                                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Email -->
+                            <div class="p-6 rounded-2xl bg-slate-900/40 border border-white/5 hover:border-indigo-500/30 transition-all">
+                                <div class="flex items-start gap-4">
+                                    <div class="w-12 h-12 bg-cyan-600/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                                        <i data-lucide="mail" class="w-6 h-6 text-cyan-400"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xl font-bold mb-2">Email Support</h3>
+                                        <p class="text-slate-400 mb-4">Send us an email and we'll get back to you within 24-48 hours.</p>
+                                        <a 
+                                            href="mailto:support@nexusacademy.com" 
+                                            class="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 font-semibold transition-colors"
+                                        >
+                                            support@nexusacademy.com
+                                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Zoom Masterclasses -->
+                            <div class="p-6 rounded-2xl bg-slate-900/40 border border-white/5 hover:border-indigo-500/30 transition-all">
+                                <div class="flex items-start gap-4">
+                                    <div class="w-12 h-12 bg-emerald-600/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                                        <i data-lucide="video" class="w-6 h-6 text-emerald-400"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xl font-bold mb-2">Live Sessions</h3>
+                                        <p class="text-slate-400 mb-4">Join our weekly Zoom masterclasses every Tuesday and Thursday at 10:00 AM EST.</p>
+                                        <a 
+                                            href="community.html" 
+                                            class="inline-flex items-center gap-2 text-emerald-400 hover:text-emerald-300 font-semibold transition-colors"
+                                        >
+                                            View Schedule
+                                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Quick Links -->
+                    <div class="p-6 rounded-2xl bg-gradient-to-br from-indigo-900/30 via-slate-900 to-slate-950 border border-indigo-500/20">
+                        <h3 class="text-xl font-bold mb-4">Common Questions</h3>
+                        <ul class="space-y-3">
+                            <li>
+                                <a href="courses.html" class="text-slate-400 hover:text-indigo-400 transition-colors flex items-center gap-2">
+                                    <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                                    What courses do you offer?
+                                </a>
+                            </li>
+                            <li>
+                                <a href="flagship.html" class="text-slate-400 hover:text-indigo-400 transition-colors flex items-center gap-2">
+                                    <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                                    Tell me about the Flagship Program
+                                </a>
+                            </li>
+                            <li>
+                                <a href="community.html" class="text-slate-400 hover:text-indigo-400 transition-colors flex items-center gap-2">
+                                    <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                                    How do I join the community?
+                                </a>
+                            </li>
+                            <li>
+                                <a href="shop.html" class="text-slate-400 hover:text-indigo-400 transition-colors flex items-center gap-2">
+                                    <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                                    Pricing and payment options
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 pt-16 pb-8 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <div class="flex items-center justify-center gap-3 mb-8">
+                <div class="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center">
+                    <i data-lucide="zap" class="text-white w-6 h-6 fill-white"></i>
+                </div>
+                <span class="text-2xl font-black tracking-tight">NEXUS ACADEMY</span>
+            </div>
+            <p class="text-slate-500 text-sm">© 2024 Nexus Academy International. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+    <script src="../cart.js"></script>
+    <script>
+        // Handle form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const form = e.target;
+            const formData = new FormData(form);
+            const messageDiv = document.getElementById('formMessage');
+            
+            // Get form values
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const subject = formData.get('subject');
+            const message = formData.get('message');
+            
+            // Create mailto link (fallback if no backend)
+            const mailtoLink = `mailto:support@nexusacademy.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
+            
+            // Show success message
+            messageDiv.className = 'text-center text-sm font-semibold text-emerald-400';
+            messageDiv.textContent = 'Thank you! Opening your email client...';
+            messageDiv.classList.remove('hidden');
+            
+            // Open email client
+            window.location.href = mailtoLink;
+            
+            // Reset form after a delay
+            setTimeout(() => {
+                form.reset();
+                messageDiv.classList.add('hidden');
+            }, 5000);
+        });
+
+        lucide.createIcons();
+    </script>
+</body>
+</html>

@@ -31,6 +31,8 @@
                 <a href="shop.html" class="text-white font-semibold">Shop</a>
                 <a href="flagship.html" class="hover:text-white transition-colors">Flagship</a>
                 <a href="community.html" class="hover:text-white transition-colors">Community</a>
+                <a href="about.html" class="hover:text-white transition-colors">About</a>
+                <a href="contact.html" class="hover:text-white transition-colors">Contact</a>
                 <a href="testimonials.html" class="hover:text-white transition-colors">Testimonials</a>
                 <a href="cart.html" class="relative hover:text-white transition-colors">
                     <i data-lucide="shopping-cart" class="w-5 h-5"></i>
@@ -51,6 +53,8 @@
             <a href="shop.html" class="text-lg py-2 mobile-nav-link">Shop</a>
             <a href="flagship.html" class="text-lg py-2 mobile-nav-link">Flagship</a>
             <a href="community.html" class="text-lg py-2 mobile-nav-link">Community</a>
+            <a href="about.html" class="text-lg py-2 mobile-nav-link">About</a>
+            <a href="contact.html" class="text-lg py-2 mobile-nav-link">Contact</a>
             <a href="testimonials.html" class="text-lg py-2 mobile-nav-link">Testimonials</a>
             <a href="cart.html" class="text-lg py-2 mobile-nav-link flex items-center gap-2">
                 <i data-lucide="shopping-cart" class="w-5 h-5"></i>
@@ -77,7 +81,7 @@
     <!-- Products Grid -->
     <section class="py-16 relative">
         <div class="max-w-7xl mx-auto px-6">
-            <div id="productsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div id="productsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Products will be dynamically loaded here -->
             </div>
         </div>
@@ -157,6 +161,19 @@
             }
         ];
 
+        // Get course detail page URL
+        function getCourseDetailUrl(productId) {
+            const coursePages = {
+                'affiliate-blueprint': 'course-affiliate-blueprint.html',
+                'social-growth-matrix': 'course-social-growth-matrix.html',
+                'ai-content-architect': 'course-ai-content-architect.html',
+                'flagship-program': 'flagship.html',
+                'network-marketing-mastery': 'course-network-marketing.html',
+                'next-gen-development-ai': 'next-gen-ai.html'
+            };
+            return coursePages[productId] || 'shop.html';
+        }
+
         // Render products
         function renderProducts() {
             const grid = document.getElementById('productsGrid');
@@ -164,27 +181,29 @@
                 <div class="group p-8 rounded-[2.5rem] bg-slate-900/40 border border-white/5 hover:border-indigo-500/30 transition-all duration-700 hover:-translate-y-3 flex flex-col relative overflow-hidden">
                     <div class="absolute -right-4 -top-4 w-32 h-32 bg-gradient-to-br from-indigo-500/5 to-transparent rounded-full blur-2xl group-hover:bg-indigo-500/10 transition-colors"></div>
                     
-                    <div class="text-6xl mb-6 text-center">${product.image}</div>
-                    
-                    <span class="inline-block self-start px-3 py-1 rounded-full bg-white/5 text-[10px] uppercase tracking-[0.2em] font-black text-indigo-400 mb-4 border border-white/5">
-                        ${product.tag}
-                    </span>
-                    
-                    <h3 class="text-2xl font-bold mb-4">${product.title}</h3>
-                    <p class="text-slate-400 leading-relaxed mb-6 flex-grow text-sm">
-                        ${product.description}
-                    </p>
+                    <a href="${getCourseDetailUrl(product.id)}" class="cursor-pointer flex-grow">
+                        <div class="text-6xl mb-6 text-center">${product.image}</div>
+                        
+                        <span class="inline-block self-start px-3 py-1 rounded-full bg-white/5 text-[10px] uppercase tracking-[0.2em] font-black text-indigo-400 mb-4 border border-white/5">
+                            ${product.tag}
+                        </span>
+                        
+                        <h3 class="text-2xl font-bold mb-4 hover:text-indigo-400 transition-colors">${product.title}</h3>
+                        <p class="text-slate-400 leading-relaxed mb-6 flex-grow text-sm">
+                            ${product.description}
+                        </p>
 
-                    <div class="space-y-2 mb-6">
-                        ${product.features.map(f => `
-                            <div class="flex items-center gap-2 text-xs text-slate-500">
-                                <i data-lucide="check-circle" class="w-3.5 h-3.5 text-emerald-500/50"></i>
-                                ${f}
-                            </div>
-                        `).join('')}
-                    </div>
+                        <div class="space-y-2 mb-6">
+                            ${product.features.map(f => `
+                                <div class="flex items-center gap-2 text-xs text-slate-500">
+                                    <i data-lucide="check-circle" class="w-3.5 h-3.5 text-emerald-500/50"></i>
+                                    ${f}
+                                </div>
+                            `).join('')}
+                        </div>
+                    </a>
                     
-                    <div class="flex items-center justify-between pt-6 border-t border-white/5">
+                    <div class="flex items-center justify-between pt-6 border-t border-white/5" onclick="event.stopPropagation()">
                         <div class="flex flex-col">
                             <span class="text-xs text-slate-500 uppercase tracking-wider font-bold">Per Course</span>
                             <span class="text-2xl font-black text-white">$${product.price}</span>
